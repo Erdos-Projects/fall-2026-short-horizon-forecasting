@@ -1,0 +1,67 @@
+# Full-run configuration. Values mirror CONFIG "v2-2026-10-28" in the merged team notebook
+# (archive/Optiver_Team_Merged.ipynb, section 2.2) unless a comment says otherwise.
+version: v3-repo-2026-11-05
+run:
+  label: full                 # written into every output; smoke runs say "smoke"
+  stocks: all                 # "all", an integer N (first N stock ids), or an explicit list
+  output_dir: results         # metrics -> <output_dir>/metrics, figures -> <output_dir>/figures
+  cache_dir: cache            # derived feature tables (gitignored)
+
+data:
+  # Resolution order: --data-dir flag, OBF_DATA_DIR environment variable, this value.
+  dir: data/optiver-realized-volatility-prediction
+
+timing:                       # seconds within the 10-minute window
+  feature_last_second: 299    # features use seconds 0..299 inclusive
+  decision_second: 299        # decide immediately after observing second 299
+  entry_second: 300           # simulated buy at the ask
+  exit_second: 599            # simulated sell at the bid
+  entry_delays: [0, 2, 5, 10] # sensitivity: extra seconds between decision and entry
+  stale_quote_seconds: 30
+
+split:
+  benchmark_seed: 0           # legacy benchmark split: 20% of time_ids, numpy default_rng(0).choice
+  benchmark_frac: 0.2
+  outer_folds: 5
+  outer_fold_seed: 1
+  inner_folds: 3
+  inner_seed_offset: 100      # inner folds of outer fold k use seed 100 + k
+  holdout_inner_seed: 999     # inner folds used to freeze the benchmark-run choices
+
+models:
+  ridge_alphas: [1.0, 10.0, 100.0]
+  hgb: {learning_rate: 0.05, max_iter: 300, max_leaf_nodes: 31, min_samples_leaf: 200,
+        l2_regularization: 1.0, random_state: 0}
+  head_selection: lowest inner out-of-fold RMSE among ridge(alpha) and HGB
+
+upgraded:                     # section 5.2 "larger models"; needs lightgbm
+  lgb_base: {n_estimators: 1500, learning_rate: 0.03, num_leaves: 63, min_child_samples: 200,
+             subsample: 0.8, subsample_freq: 1, colsample_bytree: 0.7, reg_lambda: 1.0, verbose: -1}
+  spread_overrides: {n_estimators: 3000, learning_rate: 0.015, num_leaves: 127, min_child_samples: 100}
+  price_overrides: {objective: huber, alpha: 30.0}
+  seeds: [0, 1, 2]
+  price_ridge_alpha: 3000.0
+  price_lgb_weight: 0.5
+  small_overrides: {n_estimators: 600, learning_rate: 0.06}   # section 5.3 checks
+  shap_sample: 20000
+  unseen_stock_seed: 7
+
+trading:
+  quantity: 1
+  margins_bps: [0.0, 1.0, 2.0, 5.0]
+  tau_ratios: [0.9, 1.0, 1.1, null]   # tau = log(ratio); null = no spread filter (tau = inf)
+  cost_scenarios_bps: [0.0, 0.5, 1.0] # hypothetical fee + extra slippage, per side
+  reference_cost_bps: 0.5             # declared before any rule selection
+  min_inner_trades: 200
+  rule_objective: mean net bps per eligible opportunity (no trade = 0) at the reference cost
+
+bootstrap:
+  resamples: 2000
+  seed: 0
+
+robustness:
+  fast_hgb_overrides: {learning_rate: 0.1, max_iter: 150}
+  stress_margin_bps: 2.0
+  stress_ridge: "ridge a=1"
+  neighbour_margins_bps: [0, 1, 2, 3, 5, 8]
+  path_seconds: [209, 269, 300, 302, 310, 330, 360, 420, 480, 540, 599]
