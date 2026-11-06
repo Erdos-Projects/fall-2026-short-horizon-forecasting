@@ -1,82 +1,17 @@
-# Original notebooks and experiment history
+# Original notebooks
 
-These are the team's Colab notebooks as they stood on 2026-11-05, kept for provenance. They are
-the complete research record. The focused research notebooks and the final analysis are in `notebooks/`. Start with the [research guide](../notebooks/RESEARCH_GUIDE.md).
+These are the team's original Colab notebooks as of Nov 5, 2026. The cleaned-up versions are in [`notebooks/`](../notebooks/RESEARCH_GUIDE.md).
 
 | File | Original | Notes |
 |---|---|---|
-| `Optiver_Team_Merged.ipynb` | [Colab](https://colab.research.google.com/drive/1OkEJZsLMAazzFa5uchzfx-BPNfYL55-B) | Main analysis ("the merged notebook"). Source of `notebooks/01_forecasting_and_trading.ipynb`. |
-| `Optiver_Team_Data_EDA.ipynb` | [Colab](https://colab.research.google.com/drive/1r8q1dEfwH2jVYDXWP8V1o-zmXgOwvaXU) | Team exploration (sections by Swarnendu, Francis, Eloise). |
+| `Optiver_Team_Merged.ipynb` | [Colab](https://colab.research.google.com/drive/1OkEJZsLMAazzFa5uchzfx-BPNfYL55-B) | Main analysis, became `01_forecasting_and_trading.ipynb` |
+| `Optiver_Team_Data_EDA.ipynb` | [Colab](https://colab.research.google.com/drive/1r8q1dEfwH2jVYDXWP8V1o-zmXgOwvaXU) | Team exploration (Swarnendu, Francis, Nhi) |
 
-Code, markdown, text outputs and **all 20 saved PNG figures** are preserved (5 in the merged notebook, 15 in the team exploration). The figures were restored from the original Colab files on 2026-11-06, after confirming that every source cell matches the earlier archive. Colab account execution metadata is omitted; research content is unchanged. These are original saved outputs, not a new execution.
+Code, outputs and saved figures are kept as they were. Nothing was re-run.
 
-The [cell inventory](../results/research_preservation.json) records source hashes and focused notebook destinations. Original names and wording are retained here; the author called Eloise in the source is **Nhi Dinh** in the public research guide.
+## A few notes
 
-`results/metrics/source_output_audit.csv` lists every code cell with whether it has a saved
-output or a saved error; `results/metrics/headline_claims.csv` maps each published claim to the
-cell that should support it.
-
-## Timeline of experiments (as far as the notebooks show)
-
-1. **Exploration notebook, price level/return with a 540 s cutoff (Swarnendu).** The markdown in
-   cells 11, 13, 15, 17, 19 and 21 describes inputs up to second 540 and the final mid-price as the
-   target. The code in cells 12, 20 and 22 uses **300 s**, and the plots in cells 14–18 still draw
-   the 540 s line. Treat the 540 s text as an older design; the final timing is 0–299 inputs,
-   entry at 300 and exit at 599.
-2. **Exploration notebook, price models on 60/120/180 s windows (Swarnendu).** Several saved
-   outputs come from earlier code versions and do not match the code now in the cells:
-   * cell 24 comments out the trade features, so cell 29 fails with `KeyError: 'trade_60s_count'`,
-     and cell 30 references `trade_60s_*` and `*_60s` columns that the current code no longer creates;
-   * cells 33 and 34 print two different distributions for the same `midprice_relchange` column
-     (std 0.002472 vs 0.003688). Cell 34 also uses `y_train`, which is only defined in cell 39;
-   * cell 35 reports 428,817 rows, but cell 32 reports 428,932; cell 40 fails with
-     `inconsistent numbers of samples: [343146, 343146, 343081]`;
-   * the saved 10-fold results on the return target (cells 42, 45) show **no skill**. The mean
-     baseline has the lowest RMSE, and every model's mean R² is at or below zero.
-3. **The R² ≈ 0.937 result (exploration cell 50) is not return-prediction performance.** Its
-   saved predictions are ≈ 1.0 (e.g. `1.0039, 0.9986, …`), and the plot axes read "Actual vs
-   Predicted midprice_last". It is therefore a fit of the **price level**, which mostly echoes the
-   current price (the largest ridge coefficient in cell 46 is on `trade_60s_vwap`). It was scored
-   on a different window split (`train_test_split(..., random_state=42)`), and its 85,765 test
-   rows match no other count in either notebook. The current code in cell 39 builds a **return**
-   target instead, so the saved output and the current code disagree.
-4. **The "RMSE improvement relative to mean baseline" chart (exploration cell 49)** plots
-   hand-typed values (`0.001117, 0.001148, 0.001351, 0.004402`, about a 74% "improvement"). They
-   do not match the computed out-of-fold RMSEs in the cell just above it (≈ 0.001065 for every
-   model, with the mean baseline best). This chart is not reproduced. Charts in this repository
-   are drawn only from computed tables.
-5. **Spread-change modelling (Francis, exploration cells 54–67).** This is the direct precursor
-   of the main notebook's spread head: the same first-half features, a log(S2/S1) target, and
-   10-fold `GroupKFold` on development windows. Its saved output is M6 (HGB + market) R² 0.362,
-   pooled out of fold. Its market features are window means that **include** the focal stock
-   (first-half only, so no target leakage); the main notebook switched to leave-one-out means.
-6. **Spread-widening classification (Eloise, exploration cells 70–73).** This is a binary event:
-   the 90th-percentile spread in the second half ≥ 1.5 × the first-half median, modelled with
-   logistic regression on a `GroupShuffleSplit(random_state=42)` split. The cells have **no saved
-   outputs**. The main notebook says an "earlier classification version" scored the benchmark
-   windows once; that version is not in either notebook, so this repository cannot verify it.
-7. **Merged notebook.** This is the final design. Its saved outputs stop after section 5.1: cells
-   42 (§5.2) and 63 (§8.3) hold `NameError`s for `BASE` and `fold_features`, which were defined
-   in earlier cells and lost when the runtime restarted. Cells 45, 48, 50, 52, 55, 57, 60, 66, 68
-   and 71 (§5.3, §6, §6.1, §7, Figure 1, §8.1, §8.2, §8.4, §9, §9.1) have no saved outputs. The
-   numbers in their markdown are therefore unverified; see `results/metrics/headline_claims.csv`.
-
-## Was the benchmark ("holdout") untouched?
-
-No, not in the sense the merged notebook's §9 text claims ("its price outcomes were never used
-before this cell"):
-
-* The benchmark is `numpy.random.default_rng(0).choice` over the sorted `time_id`s (766 of 3,830).
-  The merged notebook loaded a saved copy and printed no mismatch warning, so the saved file
-  equals this recipe. Francis's exploration used the same recipe and, as far as the saved outputs
-  show, fit models on development windows only.
-* Swarnendu's price experiments used a **different** split (`train_test_split(...,
-  random_state=42)` over windows). Roughly 80% of the benchmark windows (≈ 613 of 766, in
-  expectation) therefore sat in that experiment's training/CV data, with a price target closely
-  related to `y_price` (last observed mid before 600 relative to the last mid at or before 300).
-* The merged notebook itself says the benchmark's spread outcomes were scored once by an earlier
-  classification version.
-
-This repository therefore calls these windows a **previously examined benchmark**. Their
-results, once produced, are a useful consistency check but are not an untouched test.
-
+- Some saved outputs in the exploration notebook came from older versions of the code, so they don't always match the code now in the cells.
+- The early R² ≈ 0.94 price result measures the price *level*, not the return. It mostly reflects the current price. When the target is the return, the models don't beat the mean baseline.
+- Later sections of the merged notebook lost their outputs after a runtime restart, so some numbers in its text weren't re-checked here.
+- The benchmark windows aren't a fully untouched test set. Some of them were used in the early price experiments, and an earlier classifier was scored on them once. Treat results on them as a consistency check.
