@@ -1,0 +1,1900 @@
+{
+  "source": "Original Colab notebooks retrieved 2026-11-06; code matches the prior archive",
+  "cell_indexing": "zero-based",
+  "cells": [
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 0,
+      "source_sha256": "0c2ce9059e9dd840cde0a0072bfce12b3947058650d108dababc2bc0fb64043b",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 1,
+      "source_sha256": "797bdfc165c0341db8fe108655dc5ef8d5ba66c55e901c252106534491b33fe1",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 1,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 2,
+      "source_sha256": "b637934b45f0dd70455471e0dd453fa466af363e84193e766afb0e078bf7f17f",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 2,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "93055c4902ca568134ef8ecc7f01484fdaf04cf292cd8b258b3d3ec74ec7f54f"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 3,
+      "source_sha256": "26e2935488904b47aa36194b648cb32eff20eb4ae2c1af9da817510dbcd2186e",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 3,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 4,
+      "source_sha256": "4092ddab4ff26f0ff4874ab215d38f7220db947ebe38cd5c31f314bb0304b22e",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 4,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "0b94f806d604a7a1685cdc9d62b4c27a23086bb4cb6410b40550e98804408273"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 5,
+      "source_sha256": "fb293eac6a4c1d3bed69897b392255f6ea29633aea81fd612e88304db34dab3c",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 5,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 6,
+      "source_sha256": "86129b229de1e5ccb958b14060fe9672c7955f5481a5f54ce7bd012e76205f31",
+      "type": "code",
+      "saved_outputs": 4,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 6,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "0aff08dde96b09035fb1b06c751c8b65de619f38986d425a46bbaacd49085464"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 7,
+      "source_sha256": "d143ef04ca05c57aee874d1551198132ab89130951756738e7832473cb5c0e78",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 8,
+      "source_sha256": "0e7caa14d93c3c0161c00c47741a220455c9dde3f961f1c540d131002234c900",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 9,
+      "source_sha256": "9d29a65108bc20bd9eab8d97ba31cad2e730d404f75b326c0e2cfce8d8d78e0d",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 7,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 10,
+      "source_sha256": "0256252f153d91a83ff7914a6272133053329317b0ee9d41bcf021167ac9c9e5",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 8,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "7fd5f42e1c59ed7a714f19a0498c45a96ab168676952fb4a17859a229fa43d57"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 11,
+      "source_sha256": "2b2283c05c6df0d0bc28eff3a5558d67d09e67e71b418ac366304435aa69803b",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 10,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 12,
+      "source_sha256": "6561d2a91191f46952c13c4a024050a8f35ad197353d4c30278ef6ace8828b26",
+      "type": "code",
+      "saved_outputs": 2,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 11,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "79ea46ae18ead6c0deead0a5f3eb226b026413b929b88fe97fd47b838bb3f141"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 13,
+      "source_sha256": "9aaacb2934bf21f5778a880381ac911a5aacafc73b353ef5b4b9981f54f99b9b",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 12,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 14,
+      "source_sha256": "4f4aa60f7d4106c3b4fce85fb0669735861a0bda1299c87a1ae30e9c4ed75b6f",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 1,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 13,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "80ccb5fc74a20551a8965dc684f37e16775e57eff32c756fde9a76215356765b"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 15,
+      "source_sha256": "97fe63f0e8c61ae43f18396966dee863d15946314033ef9c054469f551136b16",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 14,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 16,
+      "source_sha256": "aa18e84dfaf226461b8cfcc3886d53471bbbf3027a0fdbfa59b3b744c3a8ffea",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 1,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 15,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "46a2783f17efe9b6f8cad5d65335d95e9b01c89edff2c5a9f70072a2da9d0e3d"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 17,
+      "source_sha256": "1524501e5ddac3c1fc8448065063720d2dc0f203f47967eb133694379bf59b6f",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 16,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 18,
+      "source_sha256": "e66aaac473629905c65b9fd204234a44d4738aa071ba157c24a95471681f8eab",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 1,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 17,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "6acf6160c9a11d2c46d9f46031ed5f0d32bc319965594c021ccc1cbc0c9df0f9"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 19,
+      "source_sha256": "af359b45f72d51ae1791b71c9160d48c7dee93f3160c58f2eb174f7f9f9d815f",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 18,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 20,
+      "source_sha256": "799f5ad8035e63a5b20c2d27ceaaaaaf99165d87dc4ee56d415feb00bd47eb58",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 19,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 21,
+      "source_sha256": "aede5c07d98a112276fd69f6c80c8741d35d97dd5cf63b4b6587e0890ffa6259",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 20,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 22,
+      "source_sha256": "4fee1ce83641d81492e20b64d22d2153c925a8f74f2bad8ffac83a3565052eea",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 21,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 23,
+      "source_sha256": "9955726369501482f6dcb0db3d52a8e62aef3bdaf5e760ff4bc9811de8c14358",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 22,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 24,
+      "source_sha256": "3388e1822e7e977049d59641d7963d29ff8cd2267c42a164d6d87b934be112ad",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 24,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "64cff186aaab93155abf7d0c6ee6ff20ed8494b8a167731cdf70beeb57fa9e3a"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 25,
+      "source_sha256": "cd747592570a480e2d112bd2adc57c3a99e057d4fdd2f5799d13dc5ee77f97e4",
+      "type": "code",
+      "saved_outputs": 4,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 25,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "48c2f9f34fdf58ab19472ddb4d8348e5fc731bf258e870d42fafe849434408d3"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 26,
+      "source_sha256": "788f845b39524e1bfc108141831bb81cbf9f95e03e6e110eff9f653edb02d373",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 26,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 27,
+      "source_sha256": "c5cb15391795a4232c020bee01ecc72238f0bffaaff280703481136d4610396a",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 27,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "8967f0cea5aeab805b7054641cf971fbe1e4f685d72d0e5ca9706fb873590519"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 28,
+      "source_sha256": "8eb2c8c9e2fff84ade3e2398f6411e2f1e20337bb0256e6b8aa62629663a71bb",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 28,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 29,
+      "source_sha256": "588ac98f0ca253cdb607ea46873df6c4657249341bb8d7f9edd0433403688d7b",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 29,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "897e37852d180cff543f2e2ef9a783bb97bdda48f5ced4dd491adde8a47de741"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 30,
+      "source_sha256": "393ea395a91eb4d497f65e2c26191de8fd0ddb773508058644cd5a87c1a25d3f",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 30,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "ecabdd4af5955204cda339e297d2b113d3e68ba72985fb8f7bbc6832cfbdad8c"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 31,
+      "source_sha256": "04c079abdacdf8dd0b280e308f490a62a942e93d1f2b0b8cd4052160b90f4c10",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 31,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "c5e2cdf8a77be1df2546b84e796dd3b1a64fdb8d10dd1996ba4adf683bb109c8"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 32,
+      "source_sha256": "d771ff50c33475336c25cef6551606e35e8f266d87cb9e62c5fc9f701bd5110a",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 32,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "34770cacc6114c99c71523ffa35dbd5d415386da38aafcb51e3e2a6c4b4d0149"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 33,
+      "source_sha256": "4ac9076240012e214aa6e548516b6fa7fa8e58d1a1f76ad23d2b002b3bcb2a87",
+      "type": "code",
+      "saved_outputs": 2,
+      "png_figures": 1,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 33,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "2ed439b3e31797f165be4809d7adc55b746580577d4da1db7b131c103d28785f"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 34,
+      "source_sha256": "583679c75bb8a1960c87007720b122d8616beaee0b35076c15424626a79b430d",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 35,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "074a4b0db2d2637b2273e76275ed524f2ac7d21269c4ca4d0b257e238ef6bf3a"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 35,
+      "source_sha256": "b5b42386bc757135f96eb7b30759d323bf8de330e9c0fa0a4d9073eb756d01b8",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 36,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "9719dfd962426ce815669719b0425dc1829285716493221c77361fac45d260bb"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 36,
+      "source_sha256": "6865ea61616396b289285d3ba5ccaaa0b782ee815f3ada5d8e6620000a39159a",
+      "type": "code",
+      "saved_outputs": 3,
+      "png_figures": 2,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 37,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "028a35611dd27e0818508fe09d21a1507806198090a08e3f976c00755d81798d"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 37,
+      "source_sha256": "e84c1421586bc6a61ecec89762ea5532409d2122fd449c26e6e8544bfa0e3684",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 38,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "65cf0d774fc08b5d560de6634d5986a819c0e2f91b0993034fd6bb22e72ce1b2"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 38,
+      "source_sha256": "7c1b44a6aaa66bfeaf625a3f3a58ee2447319095a98c113d5a9ca5d5f478a806",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 39,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "1463b4ef677fb7f23138e577a4f38af7cdf35ae6ac136c49e43abbd54f264f67"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 39,
+      "source_sha256": "058e779d09c56ebdfacc1afba1ba1341ab679119f5477e71a8cd9e27aaa7cede",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 40,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "de90f298d7bea1af180acb360dbcd6f9886dcacc9aac725e131b66cbd805c3a9"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 40,
+      "source_sha256": "e3b79b84f8cf64a248f403783189114621a671dee2f1e13d247bec0ce8b83778",
+      "type": "code",
+      "saved_outputs": 3,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 41,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "27b32ecf000474f2ab9729e8cbac22b80cf9e0fd830a6178aea81097ab7bd7a9"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 41,
+      "source_sha256": "14cd7b7feeb406c4de82b71e87c101b4405d42a762931ef24125f92a335fffb3",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 42,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "5121fe77a055b7509583f2ee9ec7b1464ac915bf6e31adb8c132402407f32df9"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 42,
+      "source_sha256": "e6c343aa607d810ae481ab5eced8cf0302b43720e7a3aac2839f04e883629774",
+      "type": "code",
+      "saved_outputs": 10,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 44,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "e29f8fdff8de74cf2220630fd1c8a7ed865ce9880ca1288c44943612c5a5dab4"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 43,
+      "source_sha256": "ae5b3b8a76b2c1fb01321c25ec43d18bc80ff4abdb2ffe9e36aaaa83bb2717a2",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 45,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 44,
+      "source_sha256": "d89836477ef04a83b1f697c579159e1b12ca41eea52b457f97d1d653a59fa01f",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 46,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "6853d34a05e23582aef6b338372bc7dbb8fd4fc4213af49c8b69c364281134ba"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 45,
+      "source_sha256": "2d8fdeea848fa05332ae15132ad967c3a2fb7b6ac096688a5f6774c29d1d637f",
+      "type": "code",
+      "saved_outputs": 18,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 47,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "deb2f826f7a24f3dad2065268168644b8305e7afae4b9c2cc3b55947392aeb11"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 46,
+      "source_sha256": "2f0b2cce952642b383ca7ed9a0312c398155ac9a73885316bb5e10b180dd2535",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 48,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "86263c9402a5fa78f3c2e904c17b50994faffaef1c65eac5cfb930ba115ec55c"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 47,
+      "source_sha256": "6e15fa2dfcf112d81ab0fc7dffc517c993cffa9ea8d221dbdaef4218c1c7a6f0",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 1,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 49,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "16fcef1f6d468d60b8bdccb274f520d5e0065fff48b2fbed6cdd9462390bb308"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 48,
+      "source_sha256": "fd484298b8b30af93c910365d2cf3828e0356bb4fafedafc3122fa4e2c36ac18",
+      "type": "code",
+      "saved_outputs": 11,
+      "png_figures": 4,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 50,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "a98978a8ff05081f65f097821a01888bcb96010f8fc145e3d3aefe88d646811b"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 49,
+      "source_sha256": "33aba560438ff9d2791747ea0b58e7b6208d39afd308350377a0adc35911fb7e",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 1,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 52,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "500c1bdad7857ff285777969d7ff770fe20dd8fa9179d69b127afc4e682b5c4d"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 50,
+      "source_sha256": "db00fa7005a3feb2a585e2f584af6c725e56a76bb42c382ebecfb77f53040239",
+      "type": "code",
+      "saved_outputs": 2,
+      "png_figures": 1,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 54,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "b18af7b9aa700cc49b51ea5e8013735e9f4c741cdb116264a1d2ebba192c2b9b"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 51,
+      "source_sha256": "227759adfcf287337941d1813e14170ffd262d2179c3c1d1cb8f1f2dd53de861",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 1,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 55,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "16fcef1f6d468d60b8bdccb274f520d5e0065fff48b2fbed6cdd9462390bb308"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 52,
+      "source_sha256": "2f0b2cce952642b383ca7ed9a0312c398155ac9a73885316bb5e10b180dd2535",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/02_price_experiments.ipynb",
+          "cell_index": 56,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 53,
+      "source_sha256": "1da8db21219aeac470012538c8d5eb6cf3a3f59cccd2592972f52dd12352b04d",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 54,
+      "source_sha256": "1cc1d917f2c230c52136df68bf23acc93e1d2a6b389f7e54fcff6d845ef89877",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 4,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 55,
+      "source_sha256": "6fa311f9be708a9019f0124399733034834353840e4d99b33e78cde31636c053",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 6,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "79660bab671e98d644bce06d1e234cc926a95683f75c22b85c8c981ab4e83069"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 56,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 7,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 57,
+      "source_sha256": "959f2c419e724800f39b1405009f8d53611bbe5e230afc87c2e12a9b27c6926c",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 8,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 58,
+      "source_sha256": "57cd128d78399320b62a4ff738c7470478ea7f9444983e331863fe65da38479c",
+      "type": "code",
+      "saved_outputs": 2,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 9,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "ecb4f874d6663c6ed8ca7df578e531a5d870a498204ba7287bab86377c78c5b6"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 59,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 10,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 60,
+      "source_sha256": "8f938827c96aa86abdbe1fdfd33b19b57dc605bc971c096cb29d03b62c0dfe00",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 11,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 61,
+      "source_sha256": "5fc6f61bc3a114e1ec73ba7030376f5f239d9cef859b53dea6d489c221a6620d",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 12,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "dc30cb032896a8598e440d7bff61efe030a99616b7238b425c6d93b2acdacd20"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 62,
+      "source_sha256": "c821fc0179bba2dd7f675a3ed87c96d3ab44b6b266bbd8e56ae3bc944734c235",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 13,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 63,
+      "source_sha256": "8abd5d188a202f237465d554fc9c1d00bb12cb232aac84d4b67ad3974498ab56",
+      "type": "code",
+      "saved_outputs": 3,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 15,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "84e9373c943f9de563ffaa10224a3bf0a8e9e5e046e48499896400ef36a73ec0"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 64,
+      "source_sha256": "aa09198143e5c94842d1de8e26a7475471608f8c0a29d1ce337ab8b024cbad44",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 16,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 65,
+      "source_sha256": "eedf02ce9a818ddb8cda471139f49ab9a4376b365bfa97595559d4895d267775",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 18,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 66,
+      "source_sha256": "1689f910a0614367195b00fcd0d10287bdc2a028bd1eb33b35de5489e666e37f",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 19,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 67,
+      "source_sha256": "4729a3eab7eb956076969fd1ef7bd4282f550b1ebc0af5e4b731e437d3827b65",
+      "type": "code",
+      "saved_outputs": 2,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/03_spread_model_development.ipynb",
+          "cell_index": 21,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4b886ba98df4edade6e657b7183b5d3a9cc5f2fa8868b113f4e1444ab52a846f"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 68,
+      "source_sha256": "d12899c2534f87c8894563dd0070f2e2e9872855c2e260823e0764973a1aabd6",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 69,
+      "source_sha256": "dfaadf4f97d61ab67e30129369f63f7c1e85aef1b98e74ff58376fac69cd8383",
+      "type": "code",
+      "saved_outputs": 3,
+      "png_figures": 1,
+      "visible_in": [
+        {
+          "path": "notebooks/00_data_exploration.ipynb",
+          "cell_index": 6,
+          "adaptation": "Display name changed from Eloise to Nhi Dinh; computation unchanged."
+        }
+      ],
+      "outputs_sha256": "4c4c906523baa3e893b19e7a209234c5a0df7465509de922bc9076b552b5656a"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 70,
+      "source_sha256": "dee0a8f9aa061e32109ed2e6b852e40e6614f942e52fe37321c2bc888e956ff4",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/04_spread_widening_events.ipynb",
+          "cell_index": 3,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 71,
+      "source_sha256": "e3b26a6249a28c882ea9f655f05282ab10df82ce16aa511d25e12907c912af69",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/04_spread_widening_events.ipynb",
+          "cell_index": 4,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 72,
+      "source_sha256": "2d54ab96c19c1661a98431c0b3159e4a8fc6df1d623491bd282169be03fa7ac1",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/04_spread_widening_events.ipynb",
+          "cell_index": 6,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Data_EDA.ipynb",
+      "source_cell": 73,
+      "source_sha256": "7d3715312f0af4e927820bf32497a5eb97fc7a54f7f4be92181e45b25a6f30d5",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [
+        {
+          "path": "notebooks/04_spread_widening_events.ipynb",
+          "cell_index": 8,
+          "adaptation": null
+        }
+      ],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 0,
+      "source_sha256": "ece9bd5bd6305ff46c218e45f9464bad2ec4648473b6b8076d9c1cc2e0300f3e",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 1,
+      "source_sha256": "fb61bed9e2d32cd759cc1aff948448610a52999d6e1aed085c6ee00cf0cb3a10",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 2,
+      "source_sha256": "bf0263087afed85363ec21c3c514b0b0e15b3673ae029c26c7d4f1cea19c6364",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 3,
+      "source_sha256": "369900fad48f5ed7e7f9576050096b843ec610e94449cd626ab1fbd3b3b0c4ae",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "b622a1aee96d76f347223d11a15256ecb5713c864578142df58703305e96f9de"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 4,
+      "source_sha256": "4092ddab4ff26f0ff4874ab215d38f7220db947ebe38cd5c31f314bb0304b22e",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "0b94f806d604a7a1685cdc9d62b4c27a23086bb4cb6410b40550e98804408273"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 5,
+      "source_sha256": "931a48ea07af1994b95b25d8a2a05822597278f0c43e6e317a0bf8bbfe1331d7",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 6,
+      "source_sha256": "468f7f8c18f35a2b78686dc1925455c7b9a4b2d70fcfd8ec8fecc6812ce1be1a",
+      "type": "code",
+      "saved_outputs": 3,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "3c7bdf695cd550f50f02bae6d40f712c10c12505d394daa2ae82f6cabc61972e"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 7,
+      "source_sha256": "52551568063096e5bf1fc5d1ee04b0564447fb46fa0456306d8b31ed991a883c",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 8,
+      "source_sha256": "fffa0cac29c0daeef3d9d13b9c8db4c34ffd11dc155d7c71ad5183fa57b98a5c",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 9,
+      "source_sha256": "25bdfd4a0397b9863f750b71087bfb00f3e3e0545392105473e530a794ae20de",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "21a354e9b3a6a409765e2651376a1853edec387d9b11ddf6ead24b391f5c82ab"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 10,
+      "source_sha256": "fb6541f27facc387889f090eb1a9c7a853b88f2e8be438d7ee571006bfbd88a3",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 11,
+      "source_sha256": "246240eb1a4ccb235db3f8fc12035d94180a5c680020ebd5f8cba5fd6fd26a7d",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 12,
+      "source_sha256": "c80064f9fdefa8ae65efc13d42abaab6c1c96564169df9526039616746c6b679",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 13,
+      "source_sha256": "39a8b00c9172c90ca6f63497c768156487fb98213e1aee12d175ceb26a92f535",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 14,
+      "source_sha256": "1ecc5cd2fd37f160bc2813d2dabc0fd7dbe8a3e286f76a964cc9b336997aa933",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "b0de7d000f7219918f75716ff6193e4923829c55d9f3ecec99e0a7e680819819"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 15,
+      "source_sha256": "4374f2363b7713d9026758a84231e1fe50f1f6b65e4d7191c613c044a186880c",
+      "type": "code",
+      "saved_outputs": 3,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "f2577d302e6112cfa877c5a2a4bdf90eb9fa3f51027edad3b07e6db04e5d62b6"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 16,
+      "source_sha256": "82da7a8c519b3d1d2e82e48bd51e7a55e4f2f75bb6a44397ce0759cfaae09e9d",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 17,
+      "source_sha256": "5dc33d97e54e2fbf3351a55f212bac89aa9517137e8b659293f5edc509ca630a",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "0dc5fa0033fbe7f489f1941d70ee4161fd7bbe384613b86876cbd2e94e05eb49"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 18,
+      "source_sha256": "54a10adae91cb7b6a5f69700bc577b52039faaca1cb3ce3746293ae536d79328",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 19,
+      "source_sha256": "4ef49998dd47bfc544b4be5435697d8a0f2683a33db35ce74ed2d261124722ce",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "92e639490eaf8c1725bc9f4b3462043a69ae5356cf436e05bd22ed3ad840ca5f"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 20,
+      "source_sha256": "b622519e39401cb054769ac0f14fccefbffb4dc2f9e4594b7ffd62c48563ed40",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 21,
+      "source_sha256": "502c535e609aa234dab68623373302cde6f8d934a564a39160dabd84979b644b",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 22,
+      "source_sha256": "a1441388540f9c51ffbeab8f6cdc1c9b6c6e4bcbff1c141d624be50ea1615692",
+      "type": "code",
+      "saved_outputs": 3,
+      "png_figures": 1,
+      "visible_in": [],
+      "outputs_sha256": "7d313ed0c6f2170a8f163b3e845aa53c00a92ec500cb39897ba31cd5b4d1e776"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 23,
+      "source_sha256": "a4e19b021f736d3cba8369dcf2c1b85b9126f58f1f23caa44669eaa96b7b03e0",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 24,
+      "source_sha256": "ef414133bbac9dc7e0c7b2b13f9c2bf09682d08b409c444e5ede1fc77296daf4",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 25,
+      "source_sha256": "472b77fdabae5d267b5f9bdb7a8732a5bde613e9a3f9e526533e4340214e97a1",
+      "type": "code",
+      "saved_outputs": 3,
+      "png_figures": 1,
+      "visible_in": [],
+      "outputs_sha256": "02b80677a9ceb3bd2338ec629a5eb70a7a99fefd6ac0e6c26ecd6427751b8e68"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 26,
+      "source_sha256": "66265a9d786f8e4b6328ff6a4720db0ebc8e524e123f7bc3f71b969a9b5f15e2",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 27,
+      "source_sha256": "b6ff20589b09dab8f6e508a1570d349faeab58a7d09c99d0295cb407b4241201",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 28,
+      "source_sha256": "50066a30d7303f03c5421d14a972e18719f6311b1c993e4898ca0d91f858fe0c",
+      "type": "code",
+      "saved_outputs": 2,
+      "png_figures": 1,
+      "visible_in": [],
+      "outputs_sha256": "5c93b5737c6b2d32c30408758b00869f89693a36e1b78fd5341f4481256bbed5"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 29,
+      "source_sha256": "e91508b2a801de6f79656ccaec6dbb6d0fbcd239c7ccafb536fe594c07dc7ff9",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 30,
+      "source_sha256": "4c9e8078dd43845b551f26efb64513265ca5b4f3a1b564433c94b511a2cf2b9d",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 31,
+      "source_sha256": "997f22df34e19023b1b2887f8c335047443e126ad066397c2dea474fac68fd31",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 1,
+      "visible_in": [],
+      "outputs_sha256": "49765225ccf0d02bc089d482fbd3798885d4b17b2a940cde0685c21cb62b3a0d"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 32,
+      "source_sha256": "230b4c700ab41ccbb0640c157a99868fccdf2add53a57e4c6888ce97595d204d",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 33,
+      "source_sha256": "6aaf73b1e2ccb4ddd20272bec457ef3dc831a67af3b1f0d2a74e86b4469fbdd7",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 34,
+      "source_sha256": "b3832a76c5354d4a42523fbefa457158ed68ca5b7ee7bdfee2e391472d0e8c93",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 35,
+      "source_sha256": "76cc9e2d643d8cf769023fc75e580cde0958a21595f01e3707fb8d31476da83f",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 36,
+      "source_sha256": "5532b3f853fdc0bb5fbe82799a0534ef9be8fee285dbc0fa2725c72505f7acd8",
+      "type": "code",
+      "saved_outputs": 2,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "371bcea48bc7653e47bc8acf345c8d18a2aea2a3b0bd02424cf46793aafc3c59"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 37,
+      "source_sha256": "a5cb43f105d6ed074616ba7287750687f411113d36961850559510dcc3ec3b70",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 38,
+      "source_sha256": "9b1b0105d3e25a64b30d2cc068e4e2b8c4408f47ca7bd61e38f63fe6351b3307",
+      "type": "code",
+      "saved_outputs": 5,
+      "png_figures": 1,
+      "visible_in": [],
+      "outputs_sha256": "545c286ae9d694f31a7757f3be1e71e04f2b9abb45af0239b71f44fda3c99f91"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 39,
+      "source_sha256": "87838f7792dbd98757fa93deceba34a7c52da26b4bb5d6e577b041af0112221e",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 40,
+      "source_sha256": "896ac92c516723691764e59c00f8f2d454bc6797fea7cae1f013227d453a4c3f",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 41,
+      "source_sha256": "bb1cc53e434bdcde03370e8b92bffe14fbebc40b9bb2a3d8aa3d78af9b788ed8",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "7a676c473c6efe4edf2912f168d7e05934750cdfbd9551e6fe1c00d6eca4f82b"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 42,
+      "source_sha256": "c62597115b16b28f241eebbe85b10a1d268c52fd66cb40e7b80ffd1bbb789049",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "000723f9be6e9b3acd32d9de9d7f4620514ca9bd3784c6398c5852a4eb40761d"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 43,
+      "source_sha256": "483744f722a2aaa5025cfec9e12773c565fffcc7d629228c2ab611d8a5eaafde",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 44,
+      "source_sha256": "89d24940bbeb9701ac120f5d068fcb7c48721c5e260d097f4a1d16662819d8cf",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 45,
+      "source_sha256": "a8d528ad33c228ca6548aec24fd157cbf7e7b98ecb3c8e69c6fc2e5a0cb6b2f3",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 46,
+      "source_sha256": "bd1543ad5f1616a05fa55a42d4e3a19c9d27845bd5eaa8de70f5942a7dac2ac1",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 47,
+      "source_sha256": "ebc0139dd37bb7731d468f38c373f750f9f0efae5b3e7fdf68d90ea83a0332fe",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 48,
+      "source_sha256": "59c10d028bb8f7bf37c7ddeaafabdd0548afc9933be33e9ba18dfbe178dbacfe",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 49,
+      "source_sha256": "fa1c156e25e0016caabe6df9539b4972b65a78250665bfa818ed1b3b4998d403",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 50,
+      "source_sha256": "91142c938247a5983b28bd4202e9ebbea57a2a7a1aca39d84058a9f4c4c4b7fe",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 51,
+      "source_sha256": "839a781fe208f2928b9ffe7d9e4f2bdb3ef09cf23fe9739b487eba316a946a90",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 52,
+      "source_sha256": "17bbb5a0b2429be912e1bc7ae5ce9d4ed125f297194e08ff05c812eb7989d0f6",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 53,
+      "source_sha256": "31978f9345b86b3859e2d7bc57325a9d89182add7ad7fe767518b4e90b9ec69c",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 54,
+      "source_sha256": "94a1849980f77c7018a42ca91eb37de7fcda288012ace7aae0daf0e9ab2d7a40",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 55,
+      "source_sha256": "a131ff87b5885e0b89c43c4470fcda16ff86b56496750472fab746599398a265",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 56,
+      "source_sha256": "9ad24d4773be9f9065738e8a61663c9e5ff3b8b5d8f41825d60e0a2d475cd4fc",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 57,
+      "source_sha256": "dc2d72f5e9c2dde48c91f54419efac7ac5d4beb72041ab315d5affedc4638187",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 58,
+      "source_sha256": "eba5142618667743d826832c66b90be3f97e7be40e42b87c72286b4beb308ef0",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 59,
+      "source_sha256": "21e0490e5b73ef12e6fa0889cd60192ad7a620e0440d1cc33f70d42f339a5cc8",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 60,
+      "source_sha256": "faf3b661ad7ea8e8785aff0c23fb6d9a078cca7b7da3a3273260eb77da197a41",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 61,
+      "source_sha256": "27ccfeb24517a6e98553583767d2efb3234b2183e0a7d95bb2991d256eed088d",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 62,
+      "source_sha256": "d678dcba74a70f5ea9f90d09bb83c6acc5ed42bbdd0e0bb1f1cad43dedffb0aa",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 63,
+      "source_sha256": "204ef19c156103f4f8ede981cc83bdb3db92a9f96e8a19d546eccbcd4ab36db9",
+      "type": "code",
+      "saved_outputs": 1,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "0e7c5767b7a8d6b202666554c85ac59afb142b1c06dec3c7f51514b674e07699"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 64,
+      "source_sha256": "99aa8960fa5aea4aa7f318a88f1bb5642297732f25c60b6281a25b65eaa2d5ec",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 65,
+      "source_sha256": "4d2a5d5d4f8824efa67b82864617e45b785c7d98c8b945ce5e6490b19db16af1",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 66,
+      "source_sha256": "ae6502550d1874874c8a8b717f5af2fc56c42529694b97ec6ac8b98f54318047",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 67,
+      "source_sha256": "aa2f30fbab2042b8919cf6c8e015be4aa47d4b688e998ef440a6fb12f4df4a5b",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 68,
+      "source_sha256": "19ef06b31acdb1caf00ea0ff9010c471e471100eaaf6b70b373110da0ba2ea46",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 69,
+      "source_sha256": "97c6e61684f72f7f18afbbe6ef489d99e4cd1906334039618cd6ca4b20987414",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 70,
+      "source_sha256": "a6f5b80dbd9f4acb60fcfd5972c05c9565d91e2efb1e101e00a227869bd217c0",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 71,
+      "source_sha256": "b55ba41d6022fa279c3f2ee045478d789b8208dc4f331ddfb9483e0695e81061",
+      "type": "code",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 72,
+      "source_sha256": "f9216a997a4f29cd23394eec61b1e330b21e5fdb62b92293b9450aa76fe62f0c",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "source_path": "archive/Optiver_Team_Merged.ipynb",
+      "source_cell": 73,
+      "source_sha256": "1a29007d84308c9894084e7b97eba5ae677caa710f3847567c88a2f98aafdccd",
+      "type": "markdown",
+      "saved_outputs": 0,
+      "png_figures": 0,
+      "visible_in": [],
+      "outputs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ]
+}
