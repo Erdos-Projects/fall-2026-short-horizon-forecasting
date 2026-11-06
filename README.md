@@ -39,6 +39,18 @@ Forecasting the final mid-price level directly tells the same story: across 10 g
 
 We used the [Optiver Realized Volatility Prediction](https://www.kaggle.com/competitions/optiver-realized-volatility-prediction/data) dataset from Kaggle: order books and trades for 112 stocks across 3,830 ten-minute windows. The data isn't included in this repo, and its use follows the competition rules. To rerun the notebooks, install the code with `pip install -r requirements.txt` and `pip install -e .`, then set `OBF_DATA_DIR` to the downloaded data folder.
 
+## What's left in the repo
+
+| Folder | What's in it |
+|---|---|
+| [`notebooks/`](notebooks/) | The five project notebooks (00–04) and the [notebook guide](notebooks/RESEARCH_GUIDE.md) |
+| [`results/`](results/README.md) | Saved outputs of the full-data run: figures, metric tables, which windows were used for development and held out, and run logs |
+| [`src/obforecast/`](src/obforecast/) | The Python code the notebooks use: rebuilding the order book, features, models, validation and the trading simulation |
+| [`configs/`](configs/) | Run settings: `default.yaml` for the full analysis, `smoke.yaml` for a quick three-stock test |
+| [`archive/`](archive/README.md) | The original Colab notebooks, kept unchanged with their saved outputs and figures |
+
+`requirements.txt` and `pyproject.toml` list the Python packages needed to rerun the notebooks.
+
 ## Team
 
 - **Swarnendu Banerjee**: data checks, book and trade features, price-model experiments
