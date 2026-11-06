@@ -1,17 +1,16 @@
-# Archive: original notebooks and superseded experiments
+# Original notebooks and experiment history
 
 These are the team's Colab notebooks as they stood on 2026-11-05, kept for provenance. They are
-**not** the reproducible analysis; that lives in `notebooks/` and `src/obforecast/`.
+the complete research record. Focused research notebooks and the final reproducible analysis are in `notebooks/`; reusable implementations are in `src/obforecast/`. Start with the [research guide](../notebooks/RESEARCH_GUIDE.md).
 
 | File | Original | Notes |
 |---|---|---|
 | `Optiver_Team_Merged.ipynb` | [Colab](https://colab.research.google.com/drive/1OkEJZsLMAazzFa5uchzfx-BPNfYL55-B) | Main analysis ("the merged notebook"). Source of `notebooks/01_forecasting_and_trading.ipynb`. |
 | `Optiver_Team_Data_EDA.ipynb` | [Colab](https://colab.research.google.com/drive/1r8q1dEfwH2jVYDXWP8V1o-zmXgOwvaXU) | Team exploration (sections by Swarnendu, Francis, Eloise). |
 
-Code, markdown and text outputs are unchanged. The embedded images (5 in the merged notebook,
-15 in the exploration notebook) were removed to keep the repository small; each removed figure
-is marked `[image removed in archive copy; see original Colab notebook]`. The Colab links need
-access to the team's Google account.
+Code, markdown, text outputs and **all 20 saved PNG figures** are preserved (5 in the merged notebook, 15 in the team exploration). The figures were restored from the original Colab files on 2026-11-06, after confirming that every source cell matches the earlier archive. Colab account execution metadata is omitted; research content is unchanged. These are original saved outputs, not a new execution.
+
+The [cell inventory](../results/research_preservation.json) records source hashes and focused notebook destinations. Original names and wording are retained here; the author called Eloise in the source is **Nhi Dinh** in the public research guide.
 
 `results/metrics/source_output_audit.csv` lists every code cell with whether it has a saved
 output or a saved error; `results/metrics/headline_claims.csv` maps each published claim to the
@@ -80,3 +79,4 @@ before this cell"):
 
 This repository therefore calls these windows a **previously examined benchmark**. Their
 results, once produced, are a useful consistency check but are not an untouched test.
+
