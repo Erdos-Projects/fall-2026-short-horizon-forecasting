@@ -143,7 +143,7 @@ by Git.
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements-dev.txt && pip install -e .
-pytest                                    # 47 tests on synthetic books; no data needed
+pytest                                    # 48 tests on synthetic books; no data needed
 ```
 
 **3. Runs.**

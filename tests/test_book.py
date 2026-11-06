@@ -99,3 +99,16 @@ def test_path_points_columns(synth, timing):
 def test_book_cols_order_matches_kaggle_schema():
     assert BOOK_COLS == ["bid_price1", "ask_price1", "bid_price2", "ask_price2",
                          "bid_size1", "ask_size1", "bid_size2", "ask_size2"]
+
+
+def test_perturbation_preserves_kaggle_dtypes(synth, timing):
+    """Regression: casting float32 prices to float64 changed pre-cut trade features by ~1e-6 on real
+    data and made the look-ahead check fail spuriously. The perturbation must keep dtypes."""
+    source, stocks = synth
+    book, trades = source.load("book", stocks[0]), source.load("trade", stocks[0])
+    assert str(book.bid_price1.dtype) == "float32" and str(trades.price.dtype) == "float32"
+    bk2, tr2 = perturb_future(book, trades, timing)
+    assert (bk2.dtypes == book.dtypes).all() and (tr2.dtypes == trades.dtypes).all()
+    early = trades.seconds_in_bucket < timing.cut
+    pd.testing.assert_frame_equal(tr2[tr2.seconds_in_bucket < timing.cut].reset_index(drop=True),
+                                  trades[early].reset_index(drop=True))

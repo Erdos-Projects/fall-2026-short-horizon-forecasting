@@ -12,10 +12,17 @@ import pandas as pd
 
 from .data import InMemorySource
 
+# dtypes of the Kaggle parquet files (float32 prices matter for exact-equality checks)
+KAGGLE_BOOK_DTYPES = {"time_id": "int16", "seconds_in_bucket": "int16", "bid_price1": "float32",
+                      "ask_price1": "float32", "bid_price2": "float32", "ask_price2": "float32",
+                      "bid_size1": "int32", "ask_size1": "int32", "bid_size2": "int32", "ask_size2": "int32"}
+KAGGLE_TRADE_DTYPES = {"time_id": "int16", "seconds_in_bucket": "int16", "price": "float32",
+                       "size": "int32", "order_count": "int16"}
+
 
 def make_synthetic(n_stocks: int = 8, n_windows: int = 60, seed: int = 0, update_prob: float = 0.6):
     rng = np.random.default_rng(seed)
-    time_ids = np.sort(rng.choice(np.arange(5, 40_000), size=n_windows, replace=False))
+    time_ids = np.sort(rng.choice(np.arange(5, 32_000), size=n_windows, replace=False))   # fits int16
     sec = np.arange(600)
     # market factor per window: first-half path, second-half drift tied to first-half move
     mkt = np.zeros((n_windows, 600))
@@ -58,6 +65,6 @@ def make_synthetic(n_stocks: int = 8, n_windows: int = 60, seed: int = 0, update
             trows.append(pd.DataFrame({"time_id": tid, "seconds_in_bucket": ts,
                                        "price": mid[ts] * (1 + rng.normal(0, 5e-5, n_tr)),
                                        "size": rng.integers(1, 300, n_tr), "order_count": rng.integers(1, 10, n_tr)}))
-        books[sid] = pd.concat(rows, ignore_index=True)
-        trades[sid] = pd.concat(trows, ignore_index=True)
+        books[sid] = pd.concat(rows, ignore_index=True).astype(KAGGLE_BOOK_DTYPES)
+        trades[sid] = pd.concat(trows, ignore_index=True).astype(KAGGLE_TRADE_DTYPES)
     return InMemorySource(books, trades), sorted(books)
