@@ -45,7 +45,8 @@ notebook's value is shown for comparison; the full comparison of 61 claims is in
 | Not stale-quote catch-up; placebos fail | lagged / shuffled market inputs | 5-fold grouped | gain accrues gradually (+0.1 bps at 300 s → +10.7 at 599 s); 30 s-lagged inputs still +0.23; shuffled inputs R² −0.003, no trades | same |
 | **The edge is concentrated** | window-level P&L | dev | best 1% of windows hold **76%** of the profit; dropping the 5% largest market moves leaves +0.06 | same |
 | Random-row splits leak | HGB, same inputs | grouped vs random 5-fold | price R² 0.041 → 0.179 (**4.4×**); spread 0.348 → 0.356 | 4.6× (stock means were learned out of fold) |
-| Upgraded models | LightGBM; Huber-LGBM + ridge · 131 | dev, same folds | *running* | 0.380 / 0.070 |
+| Upgraded models improve both forecasts | LightGBM (spread); Huber-LGBM + ridge (price) · 131 | dev, same folds | spread R² **0.380** (+9%), price R² **0.070** (+14%) | 0.380 / 0.070 |
+| Spread skill transfers to unseen stocks | LightGBM, no stock-specific inputs | stock group k × window fold k | R² **0.281** on never-seen stocks vs 0.325 seen | 0.28 / 0.32 |
 | Legacy benchmark, scored once | §5 models refit on dev | 766 previously examined windows | *not yet scored* | 0.358 / 0.029 / +0.19 bps |
 
 All 11 correctness checks pass on the real data ([`correctness_checks.csv`](results/metrics/correctness_checks.csv)),
@@ -204,13 +205,14 @@ pandas 3.0.5 and scikit-learn 1.9.1.
 
 ## Reproduction status
 
-* **Reproduced (2026-11-06, Colab, full data):** sections 2–8 of the main analysis. 54 of the 57
-  checkable archived numbers match within their rounding; the 3 differences are the stale-quote
+* **Reproduced (2026-11-06, Colab, full data):** sections 2–8 of the main analysis, including the
+  upgraded LightGBM models and their checks (§5.2–5.3). 58 of the 61 archived numbers match within
+  their rounding; the 3 differences are the stale-quote
   per-trade return (3.65 vs a printed 3.7) and the §8.3 leakage demo, where stock means are now
   learned inside each training fold (ratio 4.4× instead of 4.6×). See
   [`reproduction_check.csv`](results/metrics/reproduction_check.csv) and
   [`run_manifest.json`](results/run_manifest.json).
-* **Running:** the upgraded LightGBM models (§5.2) and their checks (§5.3).
+* The LightGBM stages took 3.4 hours of the 4.4-hour total ([`run_manifest_upgraded.json`](results/run_manifest_upgraded.json)).
 * **Not yet run, by design:** the legacy benchmark (§9, §9.1), which is scored once at the end.
 * The run used commit `6512fe0` with the look-ahead-check fix of commit `326314a` applied (the
   manifest records `6512fe0`); the analysis code is otherwise identical.

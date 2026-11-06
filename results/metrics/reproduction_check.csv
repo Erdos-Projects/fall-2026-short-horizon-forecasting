@@ -56,7 +56,7 @@ section,claim,archived,reproduced,tolerance,status,note
 8.3,"price R2, random-row split",0.179,0.1786393119244211,0.0005,match,stock means now in-fold
 8.3,random/grouped price R2 ratio,4.6,4.403635268270158,0.05,differs,stock means now in-fold
 8.4,correctness checks passing,8.0,8.0,0.0,match,repo runs 11 checks; counted as 8 if all pass
-5.2,upgraded spread R2,0.38,,0.0005,not run,
-5.2,upgraded price R2,0.07,,0.0005,not run,
-5.3,"unseen stocks, mean spread R2",0.28,,0.005,not run,
-5.3,"seen stocks, mean spread R2",0.32,,0.005,not run,
+5.2,upgraded spread R2,0.38,0.3803869094537176,0.0005,match,
+5.2,upgraded price R2,0.07,0.0699688486011822,0.0005,match,
+5.3,"unseen stocks, mean spread R2",0.28,0.2807260982432799,0.005,match,
+5.3,"seen stocks, mean spread R2",0.32,0.32450481623746025,0.005,match,
