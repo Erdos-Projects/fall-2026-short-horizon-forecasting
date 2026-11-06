@@ -12,11 +12,11 @@ The main results are in [01_forecasting_and_trading.ipynb](notebooks/01_forecast
 |---|---|
 | [00 Data exploration](notebooks/00_data_exploration.ipynb) | Prices, trading activity, volatility and liquidity |
 | [01 Forecasting and trading](notebooks/01_forecasting_and_trading.ipynb) | Final models and the trading simulation |
-| [02 Price experiments](notebooks/02_price_experiments.ipynb) | Price features and model comparisons |
+| [02 Final mid-price forecasting](notebooks/02_forecasting_final_midprice.ipynb) | Price features and model comparisons against a persistence baseline |
 | [03 Spread models](notebooks/03_spread_model_development.ipynb) | How the spread model was built up |
 | [04 Spread-widening events](notebooks/04_spread_widening_events.ipynb) | Classifying unusually large spread increases |
 
-[RESEARCH_GUIDE.md](notebooks/RESEARCH_GUIDE.md) says which experiments have saved results. The original working notebooks, with the full history and figures, are in [archive/](archive/README.md).
+[RESEARCH_GUIDE.md](notebooks/RESEARCH_GUIDE.md) explains how the notebooks fit together and how to rerun them. The original working notebooks, with the full history and figures, are in [archive/](archive/README.md).
 
 ## Results
 
@@ -33,11 +33,13 @@ R² is the share of variance explained. The scores come from grouped cross-valid
 
 In the trading simulation, a simple rule based on the return forecast made a small profit after costs. Adding the spread forecast to the rule didn't improve it, so better forecast accuracy didn't turn into better trades here.
 
+Forecasting the final mid-price level directly tells the same story: across 10 grouped folds, simply carrying forward the price at five minutes (R² 0.693) was as good as or better than Ridge (0.686), Elastic Net (0.683) and XGBoost (0.664). Most of a price level is explained by the current price; the hard part is the change.
+
 Treat the trading result with caution. Most of the profit comes from a few windows, and because the dataset doesn't give the windows in time order, we couldn't run a proper out-of-time backtest. The main notebook has the full numbers and caveats.
 
 ## Data
 
-We used the [Optiver Realized Volatility Prediction](https://www.kaggle.com/competitions/optiver-realized-volatility-prediction/data) dataset from Kaggle: order books and trades for 112 stocks across 3,830 ten-minute windows. The data isn't included in this repo, and its use follows the competition rules.
+We used the [Optiver Realized Volatility Prediction](https://www.kaggle.com/competitions/optiver-realized-volatility-prediction/data) dataset from Kaggle: order books and trades for 112 stocks across 3,830 ten-minute windows. The data isn't included in this repo, and its use follows the competition rules. To rerun the notebooks, install the code with `pip install -r requirements.txt` and `pip install -e .`, then set `OBF_DATA_DIR` to the downloaded data folder.
 
 ## Team
 
