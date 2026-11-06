@@ -4,7 +4,7 @@ These are the team's original Colab notebooks as of Nov 5, 2026. The cleaned-up 
 
 | File | Original | Notes |
 |---|---|---|
-| `Optiver_Team_Merged.ipynb` | [Colab](https://colab.research.google.com/drive/1OkEJZsLMAazzFa5uchzfx-BPNfYL55-B) | Main analysis, became `01_forecasting_and_trading.ipynb` |
+| `Optiver_Team_Merged.ipynb` | [Colab](https://colab.research.google.com/drive/1OkEJZsLMAazzFa5uchzfx-BPNfYL55-B) | Main analysis, became `04_forecasting_and_trading.ipynb` |
 | `Optiver_Team_Data_EDA.ipynb` | [Colab](https://colab.research.google.com/drive/1r8q1dEfwH2jVYDXWP8V1o-zmXgOwvaXU) | Team exploration (Swarnendu, Francis, Nhi) |
 
 Code, outputs and saved figures are kept as they were. Nothing was re-run.

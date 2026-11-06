@@ -1,14 +1,14 @@
 # Notebooks
 
-If you just want the results, open [Forecasting and trading](01_forecasting_and_trading.ipynb). The rest are the experiments that led up to it.
+If you just want the results, open [Forecasting and trading](04_forecasting_and_trading.ipynb). The rest are the experiments that led up to it.
 
 | Notebook | Contents |
 |---|---|
 | [Data exploration](00_data_exploration.ipynb) | A first look at prices, volatility, spreads and liquidity, and how they vary across stocks |
-| [Forecasting and trading](01_forecasting_and_trading.ipynb) | Final models, results, the trading simulation and robustness checks |
-| [Mid-price forecasting](02_forecasting_final_midprice.ipynb) | Swarnendu's order-book and trade features, with price models compared to a persistence baseline |
-| [Spread models](03_spread_model_development.ipynb) | Francis's comparison of eight spread models |
-| [Spread-widening events](04_spread_widening_events.ipynb) | Nhi's event definition, threshold choices and classifier |
+| [Mid-price forecasting](01_midprice_forecasting.ipynb) | Swarnendu's order-book and trade features, with price models compared to a persistence baseline |
+| [Spread models](02_spread_models.ipynb) | Francis's comparison of eight spread models |
+| [Spread-widening events](03_spread_widening_events.ipynb) | Nhi's event definition, threshold choices and classifier |
+| [Forecasting and trading](04_forecasting_and_trading.ipynb) | Final models, results, the trading simulation and robustness checks |
 
 ## How it fits together
 

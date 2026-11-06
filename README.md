@@ -4,17 +4,17 @@ Erdős Institute, Fall 2026
 
 This project uses order-book and trade data for 112 stocks to forecast two things over a five-minute horizon: the price return and the change in the bid–ask spread (the gap between the best bid and the best ask). We use the first five minutes of each ten-minute window to predict the next five. We explore the data, compare models for both targets, and then check whether the forecasts help in a simple trading simulation.
 
-The main results are in [01_forecasting_and_trading.ipynb](notebooks/01_forecasting_and_trading.ipynb). If you'd rather look at the data first, start with [00_data_exploration.ipynb](notebooks/00_data_exploration.ipynb). All notebooks are saved with outputs, so they render on GitHub without running anything.
+The main results are in [04_forecasting_and_trading.ipynb](notebooks/04_forecasting_and_trading.ipynb). The notebooks are numbered in the order we did the work, so you can also read them straight through. All of them are saved with outputs, so they render on GitHub without running anything.
 
 ## Notebooks
 
 | Notebook | Contents |
 |---|---|
 | [00 Data exploration](notebooks/00_data_exploration.ipynb) | Prices, trading activity, volatility and liquidity |
-| [01 Forecasting and trading](notebooks/01_forecasting_and_trading.ipynb) | Final models and the trading simulation |
-| [02 Final mid-price forecasting](notebooks/02_forecasting_final_midprice.ipynb) | Price features and model comparisons against a persistence baseline |
-| [03 Spread models](notebooks/03_spread_model_development.ipynb) | How the spread model was built up |
-| [04 Spread-widening events](notebooks/04_spread_widening_events.ipynb) | Classifying unusually large spread increases |
+| [01 Mid-price forecasting](notebooks/01_midprice_forecasting.ipynb) | Price features and model comparisons against a persistence baseline |
+| [02 Spread models](notebooks/02_spread_models.ipynb) | How the spread model was built up |
+| [03 Spread-widening events](notebooks/03_spread_widening_events.ipynb) | Classifying unusually large spread increases |
+| [04 Forecasting and trading](notebooks/04_forecasting_and_trading.ipynb) | Final models and the trading simulation |
 
 [RESEARCH_GUIDE.md](notebooks/RESEARCH_GUIDE.md) explains how the notebooks fit together and how to rerun them. The original working notebooks, with the full history and figures, are in [archive/](archive/README.md).
 

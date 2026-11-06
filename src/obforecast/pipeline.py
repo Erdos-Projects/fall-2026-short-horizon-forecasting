@@ -1,6 +1,6 @@
 """Analysis stages of the merged notebook as functions with explicit inputs (no hidden state).
 
-Section numbers refer to ``notebooks/01_forecasting_and_trading.ipynb`` (same numbering as the
+Section numbers refer to ``notebooks/04_forecasting_and_trading.ipynb`` (same numbering as the
 archived merged notebook). Every function returns DataFrames/dicts; ``run.py`` writes them.
 """
 from __future__ import annotations

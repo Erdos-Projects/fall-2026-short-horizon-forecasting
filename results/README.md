@@ -1,7 +1,7 @@
 # Results
 
 The saved results of the project's full-data run (all 112 stocks, 3,830 windows), shown in the
-[main notebook](../notebooks/01_forecasting_and_trading.ipynb) and the [README](../README.md).
+[main notebook](../notebooks/04_forecasting_and_trading.ipynb) and the [README](../README.md).
 
 | Folder | What's in it |
 |---|---|
