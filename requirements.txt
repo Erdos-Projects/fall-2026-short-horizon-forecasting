@@ -1,0 +1,10 @@
+# Runtime dependencies. Lower bounds reflect the APIs used; see README "Environment" for the
+# exact versions each part was tested with.
+numpy>=1.26
+pandas>=2.2          # groupby.apply(include_groups=...)
+scikit-learn>=1.4
+matplotlib>=3.8
+pyyaml>=6.0
+pyarrow>=14          # reading the Kaggle parquet partitions
+lightgbm>=4.0        # upgraded models (sections 5.2, 5.3, 9.1); skip with --skip-upgraded
+kagglehub>=0.3       # optional: download the competition data (Colab setup cell)
