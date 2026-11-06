@@ -1,29 +1,21 @@
-# Notebook guide
+# Notebooks
 
-**Start with [Forecasting and trading](01_forecasting_and_trading.ipynb)** for the final results. The other notebooks show the work behind them.
+If you just want the results, open [Forecasting and trading](01_forecasting_and_trading.ipynb). The rest are the experiments that led up to it.
 
-| Notebook | What you will find |
+| Notebook | Contents |
 |---|---|
-| [Data exploration](00_data_exploration.ipynb) | Prices, volatility, spreads, liquidity and differences between stocks |
-| [Forecasting and trading](01_forecasting_and_trading.ipynb) | Final models, results, trading simulation and checks |
-| [Final mid-price forecasting](02_forecasting_final_midprice.ipynb) | Swarnendu’s book and trade features and a comparison of price models against a persistence baseline |
-| [Spread models](03_spread_model_development.ipynb) | Francis’s step-by-step comparison of eight models |
-| [Spread-widening events](04_spread_widening_events.ipynb) | Nhi’s event definition, threshold comparisons and classifier |
+| [Data exploration](00_data_exploration.ipynb) | A first look at prices, volatility, spreads and liquidity, and how they vary across stocks |
+| [Forecasting and trading](01_forecasting_and_trading.ipynb) | Final models, results, the trading simulation and robustness checks |
+| [Mid-price forecasting](02_forecasting_final_midprice.ipynb) | Swarnendu's order-book and trade features, with price models compared to a persistence baseline |
+| [Spread models](03_spread_model_development.ipynb) | Francis's comparison of eight spread models |
+| [Spread-widening events](04_spread_widening_events.ipynb) | Nhi's event definition, threshold choices and classifier |
 
-Notebooks 00, 02, 03 and 04 were run from top to bottom on the full data (all 112 stocks), so their outputs are real results from those runs.
+## How it fits together
 
-## How the pieces connect
+We started with price forecasting to see which signals were useful. The spread models predict how average liquidity changes. The event classifier asks something different: which windows are likely to see a big jump in the spread? The final notebook combines the price and spread forecasts and tests a simple trading rule on top of them.
 
-The price experiments explore useful signals. The spread models forecast changes in average liquidity. The event classifier asks a different question: which windows are at risk of a large spread increase? The final study brings price and spread forecasts together and tests a simple trading rule.
+Each part has its own target and metric, so the scores aren't directly comparable across notebooks.
 
-Each experiment keeps its own target and evaluation method. A price-level score, return score and classification score describe different tasks.
+## Original notebooks
 
-## Running the notebooks
-
-The analysis code is in [`src/obforecast`](../src/obforecast) and the settings are in [`configs/`](../configs). Install with `pip install -r requirements.txt` and `pip install -e .`, set `OBF_DATA_DIR` to the Kaggle data folder, and run any notebook. `configs/smoke.yaml` runs a quick three-stock version. Swarnendu's notebook reads the data from the team's shared Google Drive folder.
-
-## Original work and details
-
-Both [original notebooks](../archive/README.md) keep all 148 cells and 20 saved figures. The original author name Eloise refers to **Nhi Dinh**.
-
-See the [experiment history](../archive/README.md) for version-specific notes.
+The [original notebooks](../archive/README.md) are archived with all their cells and saved figures. "Eloise" in those notebooks is Nhi Dinh.
