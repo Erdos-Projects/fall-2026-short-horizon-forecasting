@@ -39,11 +39,9 @@ The price-based rule earned a small simulated return after costs. Adding the spr
 
 The trading result depends heavily on a few windows, and the data does not support a chronological test. This is a research simulation. See the [main notebook](notebooks/01_forecasting_and_trading.ipynb) for the numbers and their limits.
 
-## Try it
+## Data
 
-Open the [main notebook in Colab](https://colab.research.google.com/github/Erdos-Projects/fall-2026-short-horizon-forecasting/blob/main/notebooks/01_forecasting_and_trading.ipynb). To run it, you will need access to the [Optiver dataset on Kaggle](https://www.kaggle.com/competitions/optiver-realized-volatility-prediction/data). The setup cell explains how to load the data.
-
-For local installation, model settings and detailed evaluation notes, see [technical notes and setup](docs/TECHNICAL_NOTES.md).
+We used the [Optiver Realized Volatility Prediction dataset on Kaggle](https://www.kaggle.com/competitions/optiver-realized-volatility-prediction/data): order books and trades for 112 stocks over 3,830 ten-minute windows. The data is not included in this repository.
 
 ## Team
 
