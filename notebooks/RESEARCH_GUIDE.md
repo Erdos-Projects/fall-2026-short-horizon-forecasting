@@ -18,4 +18,4 @@ Each part has its own target and metric, so the scores aren't directly comparabl
 
 ## Original notebooks
 
-The [original notebooks](../archive/README.md) are archived with all their cells and saved figures. "Eloise" in those notebooks is Nhi Dinh.
+The [original notebooks](../archive/README.md) are archived with all their cells and saved figures. 
