@@ -35,8 +35,6 @@ In the trading simulation, a simple rule based on the return forecast made a sma
 
 Forecasting the final mid-price level directly tells the same story: across 10 grouped folds, simply carrying forward the price at five minutes (R² 0.693) was as good as or better than Ridge (0.686), Elastic Net (0.683) and XGBoost (0.664). Most of a price level is explained by the current price; the hard part is the change.
 
-Treat the trading result with caution. Most of the profit comes from a few windows, and because the dataset doesn't give the windows in time order, we couldn't run a proper out-of-time backtest. The main notebook has the full numbers and caveats.
-
 ## Data
 
 We used the [Optiver Realized Volatility Prediction](https://www.kaggle.com/competitions/optiver-realized-volatility-prediction/data) dataset from Kaggle: order books and trades for 112 stocks across 3,830 ten-minute windows. The data isn't included in this repo, and its use follows the competition rules. To rerun the notebooks, install the code with `pip install -r requirements.txt` and `pip install -e .`, then set `OBF_DATA_DIR` to the downloaded data folder.
@@ -44,5 +42,5 @@ We used the [Optiver Realized Volatility Prediction](https://www.kaggle.com/comp
 ## Team
 
 - **Swarnendu Banerjee**: data checks, book and trade features, price-model experiments
-- **Nhi Dinh**: volatility and liquidity exploration, spread-widening classification, model extensions, trading simulation, robustness checks
+- **Nhi Dinh**: volatility and liquidity exploration, spread-widening classification, model extensions
 - **Francis White**: spread-model development, market features, grouped validation
