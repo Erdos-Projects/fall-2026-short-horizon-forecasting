@@ -16,14 +16,12 @@ The price experiments explore useful signals. The spread models forecast changes
 
 Each experiment keeps its own target and evaluation method. A price-level score, return score and classification score describe different tasks.
 
-## Running the notebooks
+## Saved results
 
-Use the setup cells and the Kaggle dataset. The final study defaults to a small **smoke run** for trying the code; choose `configs/default.yaml` for the full analysis. The extracted spread-model and event notebooks retain their original full-data experiments, which can take longer.
-
-Saved tables at the start of the final study come from the published full-data runs. They stay separate from any new run you perform. The new spread/event extractions have been checked with synthetic data but have not been rerun on the full Kaggle dataset.
+The tables at the start of the final study come from the full-data runs saved in [`results/`](../results/README.md). The spread-model and event notebooks keep their original saved outputs.
 
 ## Original work and details
 
 Both [original notebooks](../archive/README.md) keep all 148 cells and 20 saved figures. The original author name Eloise refers to **Nhi Dinh**.
 
-See [technical notes and setup](../docs/TECHNICAL_NOTES.md) for methods and reproduction instructions, [experiment history](../archive/README.md) for version-specific notes, and the [preservation record](../results/research_preservation.json) for the cell inventory.
+See the [experiment history](../archive/README.md) for version-specific notes.
