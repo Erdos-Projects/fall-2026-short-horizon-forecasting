@@ -1,0 +1,4 @@
+trim,"rule, net bps per opportunity","always long at the mid, no costs"
+all windows,0.3185597011222477,0.24365261204267294
+drop own best 5% of windows,-0.12055501301624254,-1.2378550581312047
+drop 5% largest |market move|,0.05995433499504923,0.2865686392347559

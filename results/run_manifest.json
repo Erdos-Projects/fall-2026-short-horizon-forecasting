@@ -1,0 +1,243 @@
+{
+  "label": "full",
+  "config": {
+    "version": "v3-repo-2026-11-05",
+    "run": {
+      "label": "full",
+      "stocks": "all",
+      "output_dir": "results",
+      "cache_dir": "cache"
+    },
+    "data": {
+      "dir": "data/optiver-realized-volatility-prediction"
+    },
+    "timing": {
+      "feature_last_second": 299,
+      "decision_second": 299,
+      "entry_second": 300,
+      "exit_second": 599,
+      "entry_delays": [
+        0,
+        2,
+        5,
+        10
+      ],
+      "stale_quote_seconds": 30
+    },
+    "split": {
+      "benchmark_seed": 0,
+      "benchmark_frac": 0.2,
+      "outer_folds": 5,
+      "outer_fold_seed": 1,
+      "inner_folds": 3,
+      "inner_seed_offset": 100,
+      "holdout_inner_seed": 999
+    },
+    "models": {
+      "ridge_alphas": [
+        1.0,
+        10.0,
+        100.0
+      ],
+      "hgb": {
+        "learning_rate": 0.05,
+        "max_iter": 300,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 200,
+        "l2_regularization": 1.0,
+        "random_state": 0
+      },
+      "head_selection": "lowest inner out-of-fold RMSE among ridge(alpha) and HGB"
+    },
+    "upgraded": {
+      "lgb_base": {
+        "n_estimators": 1500,
+        "learning_rate": 0.03,
+        "num_leaves": 63,
+        "min_child_samples": 200,
+        "subsample": 0.8,
+        "subsample_freq": 1,
+        "colsample_bytree": 0.7,
+        "reg_lambda": 1.0,
+        "verbose": -1
+      },
+      "spread_overrides": {
+        "n_estimators": 3000,
+        "learning_rate": 0.015,
+        "num_leaves": 127,
+        "min_child_samples": 100
+      },
+      "price_overrides": {
+        "objective": "huber",
+        "alpha": 30.0
+      },
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "price_ridge_alpha": 3000.0,
+      "price_lgb_weight": 0.5,
+      "small_overrides": {
+        "n_estimators": 600,
+        "learning_rate": 0.06
+      },
+      "shap_sample": 20000,
+      "unseen_stock_seed": 7
+    },
+    "trading": {
+      "quantity": 1,
+      "margins_bps": [
+        0.0,
+        1.0,
+        2.0,
+        5.0
+      ],
+      "tau_ratios": [
+        0.9,
+        1.0,
+        1.1,
+        null
+      ],
+      "cost_scenarios_bps": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "reference_cost_bps": 0.5,
+      "min_inner_trades": 200,
+      "rule_objective": "mean net bps per eligible opportunity (no trade = 0) at the reference cost"
+    },
+    "bootstrap": {
+      "resamples": 2000,
+      "seed": 0
+    },
+    "robustness": {
+      "fast_hgb_overrides": {
+        "learning_rate": 0.1,
+        "max_iter": 150
+      },
+      "stress_margin_bps": 2.0,
+      "stress_ridge": "ridge a=1",
+      "neighbour_margins_bps": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        8
+      ],
+      "path_seconds": [
+        209,
+        269,
+        300,
+        302,
+        310,
+        330,
+        360,
+        420,
+        480,
+        540,
+        599
+      ]
+    }
+  },
+  "config_source": "configs/default.yaml",
+  "config_hash": "93a3770821ba",
+  "versions": {
+    "python": "3.13.18",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "obforecast": "0.3.0",
+    "numpy": "2.4.6",
+    "pandas": "2.2.3",
+    "sklearn": "1.6.1",
+    "scipy": "1.16.3",
+    "matplotlib": "3.10.0",
+    "pyarrow": "23.0.1",
+    "lightgbm": "4.6.0",
+    "yaml": "6.0.3",
+    "git_commit": "6512fe02397ca5212ffe72ab219bd2b12fd0d13f"
+  },
+  "started": "2026-11-06T10:20:07",
+  "stages": {
+    "features": {
+      "status": "executed",
+      "minutes": 6.22
+    },
+    "checks": {
+      "status": "executed",
+      "minutes": 0.13
+    },
+    "cv": {
+      "status": "executed",
+      "minutes": 18.75
+    },
+    "trading": {
+      "status": "executed",
+      "minutes": 0.01
+    },
+    "sensitivity": {
+      "status": "executed",
+      "minutes": 0.05
+    },
+    "why_spread": {
+      "status": "executed",
+      "minutes": 0.48
+    },
+    "ablation": {
+      "status": "executed",
+      "minutes": 11.58
+    },
+    "leakage": {
+      "status": "executed",
+      "minutes": 9.1
+    },
+    "stress": {
+      "status": "executed",
+      "minutes": 3.18
+    },
+    "upgraded": {
+      "status": "skipped",
+      "reason": "--skip-upgraded"
+    },
+    "benchmark": {
+      "status": "skipped",
+      "reason": "not requested (pass --score-benchmark to score the legacy benchmark once)"
+    }
+  },
+  "data": {
+    "dir": "/content/drive/MyDrive/Optiver_Project/data",
+    "train_rows": 428932,
+    "train_stocks": 112,
+    "train_time_ids": 3830,
+    "book_folders": 112,
+    "trade_folders": 112,
+    "book_matches_train": true,
+    "trade_matches_train": true,
+    "missing": {
+      "book": [],
+      "trade": []
+    },
+    "stocks_used": 112
+  },
+  "split": {
+    "recipe": "numpy default_rng(0).choice(sorted time_ids, 20%)",
+    "n_windows": 3830,
+    "n_benchmark": 766,
+    "source": "regenerated from recipe",
+    "matches_recipe": true,
+    "written_to": "/content/drive/MyDrive/Optiver_Project/repo_run_full/splits/benchmark_time_ids.csv",
+    "dev_windows": 3064,
+    "dev_rows": 343144,
+    "bench_windows": 766,
+    "bench_rows": 85788,
+    "outer_fold_windows": {
+      "0": 613,
+      "1": 613,
+      "2": 613,
+      "3": 613,
+      "4": 612
+    }
+  },
+  "finished": "2026-11-06T11:09:41"
+}

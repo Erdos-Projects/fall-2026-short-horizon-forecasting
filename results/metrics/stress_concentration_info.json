@@ -1,0 +1,8 @@
+{
+  "trades": 21322,
+  "traded windows": 1025,
+  "windows": 3064,
+  "share of rule P&L in best 1% of windows": 0.7632494566397213,
+  "gross bps per trade (fee 0)": 6.127022891896575,
+  "break-even fee bp per side (decisions fixed)": 3.0635114459482873
+}
