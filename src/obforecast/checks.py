@@ -17,21 +17,33 @@ from .validation import assign_folds
 
 
 def perturb_future(book: pd.DataFrame, trades: pd.DataFrame | None, timing: Timing):
-    """Change every book and trade observation at or after the cut (prices, sizes, counts)."""
-    bk = book.astype({c: float for c in BOOK_COLS}).copy()
+    """Change every book and trade observation at or after the cut (prices, sizes, counts).
+
+    Column dtypes are preserved (Kaggle stores prices as float32): casting to float64 would change
+    pre-cut values at ~1e-6 and make the check fail for a reason unrelated to look-ahead.
+    """
+    def scale(df, mask, cols, factor=None, add=None):
+        for c in cols:
+            v = df.loc[mask, c].astype("float64")
+            v = v * factor if factor is not None else v + add
+            df.loc[mask, c] = v.astype(df[c].dtype)
+
+    bk = book.copy()
     late = bk.seconds_in_bucket >= timing.cut
-    bk.loc[late, ["bid_price1", "ask_price1"]] *= np.array([0.99, 1.02])
-    bk.loc[late, ["bid_price2", "ask_price2"]] *= np.array([0.985, 1.025])
-    bk.loc[late, ["bid_size1", "ask_size1", "bid_size2", "ask_size2"]] += 7
+    scale(bk, late, ["bid_price1"], 0.99)
+    scale(bk, late, ["ask_price1"], 1.02)
+    scale(bk, late, ["bid_price2"], 0.985)
+    scale(bk, late, ["ask_price2"], 1.025)
+    scale(bk, late, ["bid_size1", "ask_size1", "bid_size2", "ask_size2"], add=7)
     tr = None
     if trades is not None:
-        tr = trades.astype({"price": float, "size": float, "order_count": float}).copy()
+        tr = trades.copy()
         late_t = tr.seconds_in_bucket >= timing.cut
-        tr.loc[late_t, "price"] *= 1.03
-        tr.loc[late_t, ["size", "order_count"]] += 11
+        scale(tr, late_t, ["price"], 1.03)
+        scale(tr, late_t, ["size", "order_count"], add=11)
         # add an extra late trade in every window
         add = tr.groupby("time_id").head(1).copy()
-        add["seconds_in_bucket"] = timing.cut + 5
+        add["seconds_in_bucket"] = np.asarray(timing.cut + 5).astype(tr.seconds_in_bucket.dtype)
         tr = pd.concat([tr, add], ignore_index=True)
     return bk, tr
 

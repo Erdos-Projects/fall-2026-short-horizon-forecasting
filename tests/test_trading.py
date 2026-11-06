@@ -48,7 +48,7 @@ def test_per_opportunity_accounting():
 def test_price_scaling_invariance(synth, timing):
     source, stocks = synth
     bk = source.load("book", stocks[0])
-    scaled = bk.copy()
+    scaled = bk.astype({c: "float64" for c in ["bid_price1", "ask_price1", "bid_price2", "ask_price2"]})
     scaled[["bid_price1", "ask_price1", "bid_price2", "ask_price2"]] *= 37.5
     _, o_a, _, _ = build_stock(stocks[0], bk, timing)
     _, o_b, _, _ = build_stock(stocks[0], scaled, timing)

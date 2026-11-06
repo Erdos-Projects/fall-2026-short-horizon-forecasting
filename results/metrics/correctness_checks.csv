@@ -1,0 +1,12 @@
+check,passed
+"unique keys, features = outcomes row for row",True
+no time_id in two folds (outer and inner),True
+future perturbation: baseline features identical,True
+future perturbation: targets/fills change,True
+future perturbation: upgraded book/trade features identical,True
+price scaling invariance,True
+no backfill before a window's first quote,True
+no carry-over between windows,True
+flat round trip loses exactly the spread,True
+higher costs never raise profit,True
+decide() takes no outcome inputs,True

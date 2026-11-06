@@ -1,0 +1,20 @@
+[features] running
+[cv] running
+outer fold 1/5: heads {'price': 'ridge a=1', 'spread': 'HGB'} | rules {'price only': (2.0, inf), 'price + spread': (2.0, inf)} | 3.8 min
+outer fold 2/5: heads {'price': 'ridge a=100', 'spread': 'HGB'} | rules {'price only': (2.0, inf), 'price + spread': (2.0, inf)} | 3.9 min
+outer fold 3/5: heads {'price': 'ridge a=100', 'spread': 'HGB'} | rules {'price only': (2.0, inf), 'price + spread': (2.0, inf)} | 3.9 min
+outer fold 4/5: heads {'price': 'ridge a=1', 'spread': 'HGB'} | rules {'price only': (2.0, inf), 'price + spread': (2.0, inf)} | 4.0 min
+outer fold 5/5: heads {'price': 'ridge a=1', 'spread': 'HGB'} | rules {'price only': (2.0, inf), 'price + spread': (2.0, inf)} | 3.8 min
+[upgraded] running
+upgraded outer fold 1: 131 inputs | 40.1 min
+upgraded outer fold 2: 131 inputs | 39.8 min
+upgraded outer fold 3: 131 inputs | 41.9 min
+upgraded outer fold 4: 131 inputs | 39.1 min
+upgraded outer fold 5: 131 inputs | 42.8 min
+[upgraded_checks] running
+unseen-stock check fold 1/5
+unseen-stock check fold 2/5
+unseen-stock check fold 3/5
+unseen-stock check fold 4/5
+unseen-stock check fold 5/5
+done (full); failed stages: none; manifest: /content/drive/MyDrive/Optiver_Project/repo_run_upgraded/run_manifest.json

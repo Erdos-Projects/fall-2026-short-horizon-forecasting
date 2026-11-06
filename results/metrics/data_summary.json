@@ -1,0 +1,10 @@
+{
+  "stocks": 112,
+  "windows": 3830,
+  "eligible rows": 428932,
+  "quality rows": 428932,
+  "windows excluded (no valid quote before cut)": 0,
+  "invalid snapshots dropped": 0,
+  "entry ask older than stale threshold": 0.0007926664366379753,
+  "exit bid older than stale threshold": 0.0028139658500648122
+}
