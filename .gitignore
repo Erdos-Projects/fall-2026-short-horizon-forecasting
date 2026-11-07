@@ -1,0 +1,26 @@
+# raw data, credentials and caches never go into Git
+data/
+*.parquet
+kaggle.json
+.kaggle/
+.env
+cache/
+*.pkl
+
+# throwaway run outputs (smoke and synthetic runs are labelled and not committed)
+results/smoke/
+results/synthetic/
+
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/

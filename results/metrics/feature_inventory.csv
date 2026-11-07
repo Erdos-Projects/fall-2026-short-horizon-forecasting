@@ -1,0 +1,132 @@
+feature,baseline_47,upgraded_131,family,kind
+q_299,True,True,spread,raw first-half
+log_S1,True,True,spread,raw first-half
+sp_last60,True,True,spread,raw first-half
+sp_last30,True,True,spread,raw first-half
+sp_last10,True,True,spread,raw first-half
+sp_now,True,True,spread,raw first-half
+sp_first60,True,True,spread,raw first-half
+sp_logstd,True,True,spread,raw first-half
+sp2_rel,True,True,spread,raw first-half
+sp_in_min,True,True,min_spread,raw first-half
+frac_at_min,True,True,min_spread,raw first-half
+log_rel_min_sp,True,True,min_spread,raw first-half
+log_rv,True,True,volatility,raw first-half
+log_rv_last100,True,True,volatility,raw first-half
+rv_ratio,True,True,volatility,raw first-half
+ret_0_299,True,True,price,raw first-half
+ret_last60,True,True,price,raw first-half
+ret_last10,True,True,price,raw first-half
+abs_ret,True,True,price,raw first-half
+wap_tilt_now,True,True,price,raw first-half
+wap_tilt_last30,True,True,price,raw first-half
+log_nupd,True,True,activity,raw first-half
+upd_last60,True,True,activity,raw first-half
+quote_age_299,True,True,activity,raw first-half
+log_depth1,True,True,depth,raw first-half
+log_depth2,True,True,depth,raw first-half
+depth1_last60,True,True,depth,raw first-half
+imbalance_abs,True,True,imbalance,raw first-half
+imb_now,True,True,imbalance,raw first-half
+imb_last30,True,True,imbalance,raw first-half
+log_S1_vs_stock,True,True,spread,stock-relative (train-fold mean)
+log_rv_vs_stock,True,True,volatility,stock-relative (train-fold mean)
+log_nupd_vs_stock,True,True,activity,stock-relative (train-fold mean)
+log_depth1_vs_stock,True,True,depth,stock-relative (train-fold mean)
+mkt_sp_last60,True,True,spread,market (leave-one-out)
+mkt_sp_now,True,True,spread,market (leave-one-out)
+mkt_log_S1_vs_stock,True,True,spread,market (leave-one-out)
+mkt_log_rv_vs_stock,True,True,volatility,market (leave-one-out)
+mkt_rv_ratio,True,True,volatility,market (leave-one-out)
+mkt_ret_0_299,True,True,price,market (leave-one-out)
+mkt_ret_last60,True,True,price,market (leave-one-out)
+mkt_log_nupd_vs_stock,True,True,activity,market (leave-one-out)
+mkt_upd_last60,True,True,activity,market (leave-one-out)
+mkt_log_depth1_vs_stock,True,True,depth,market (leave-one-out)
+mkt_imb_now,True,True,imbalance,market (leave-one-out)
+rel_sp_last60,True,True,spread,relative to market
+rel_ret_0_299,True,True,price,relative to market
+mkt_q_299,False,True,spread,market (leave-one-out)
+mkt_log_S1,False,True,spread,market (leave-one-out)
+mkt_sp_last30,False,True,spread,market (leave-one-out)
+mkt_sp_last10,False,True,spread,market (leave-one-out)
+mkt_sp_first60,False,True,spread,market (leave-one-out)
+mkt_sp_logstd,False,True,spread,market (leave-one-out)
+mkt_sp2_rel,False,True,spread,market (leave-one-out)
+mkt_sp_in_min,False,True,min_spread,market (leave-one-out)
+mkt_frac_at_min,False,True,min_spread,market (leave-one-out)
+mkt_log_rel_min_sp,False,True,min_spread,market (leave-one-out)
+mkt_log_rv,False,True,volatility,market (leave-one-out)
+mkt_log_rv_last100,False,True,volatility,market (leave-one-out)
+mkt_ret_last10,False,True,price,market (leave-one-out)
+mkt_abs_ret,False,True,price,market (leave-one-out)
+mkt_wap_tilt_now,False,True,price,market (leave-one-out)
+mkt_wap_tilt_last30,False,True,price,market (leave-one-out)
+mkt_log_nupd,False,True,activity,market (leave-one-out)
+mkt_quote_age_299,False,True,activity,market (leave-one-out)
+mkt_log_depth1,False,True,depth,market (leave-one-out)
+mkt_log_depth2,False,True,depth,market (leave-one-out)
+mkt_depth1_last60,False,True,depth,market (leave-one-out)
+mkt_imbalance_abs,False,True,imbalance,market (leave-one-out)
+mkt_imb_last30,False,True,imbalance,market (leave-one-out)
+rel_sp_last30,False,True,spread,relative to market
+rel_sp_last10,False,True,spread,relative to market
+rel_sp_now,False,True,spread,relative to market
+rel_log_rv,False,True,volatility,relative to market
+rel_ret_last60,False,True,price,relative to market
+rel_ret_last10,False,True,price,relative to market
+rel_imb_now,False,True,imbalance,relative to market
+rel_log_nupd,False,True,activity,relative to market
+xsd_ret_last60,False,True,price,cross-stock dispersion in window
+xsd_ret_0_299,False,True,price,cross-stock dispersion in window
+xsd_sp_last60,False,True,spread,cross-stock dispersion in window
+te_spread,False,True,target statistic,stock target mean/std (train fold)
+tsd_spread,False,True,target statistic,stock target mean/std (train fold)
+te_price,False,True,target statistic,stock target mean/std (train fold)
+tsd_price,False,True,target statistic,stock target mean/std (train fold)
+x_lq_p10,False,True,spread path / depth,raw first-half (extra)
+x_lq_p50,False,True,spread path / depth,raw first-half (extra)
+x_lq_p90,False,True,spread path / depth,raw first-half (extra)
+x_lq_max60,False,True,spread path / depth,raw first-half (extra)
+x_lq_min60,False,True,spread path / depth,raw first-half (extra)
+x_lq_120,False,True,spread path / depth,raw first-half (extra)
+x_lq_200_240,False,True,spread path / depth,raw first-half (extra)
+x_sp_slope,False,True,spread path / depth,raw first-half (extra)
+x_n_spchg,False,True,spread path / depth,raw first-half (extra)
+x_n_spchg60,False,True,spread path / depth,raw first-half (extra)
+x_since_spchg,False,True,spread path / depth,raw first-half (extra)
+x_frac_wide,False,True,spread path / depth,raw first-half (extra)
+x_frac_wide60,False,True,spread path / depth,raw first-half (extra)
+x_lq_now_vs_med,False,True,spread path / depth,raw first-half (extra)
+x_lq2_60,False,True,spread path / depth,raw first-half (extra)
+x_l2gap,False,True,spread path / depth,raw first-half (extra)
+x_ldep60,False,True,spread path / depth,raw first-half (extra)
+x_ldep_trend,False,True,spread path / depth,raw first-half (extra)
+x_rv30,False,True,spread path / depth,raw first-half (extra)
+x_rv_first150,False,True,spread path / depth,raw first-half (extra)
+t_ln,False,True,trade prints,raw first-half (extra)
+t_lvol,False,True,trade prints,raw first-half (extra)
+t_loc,False,True,trade prints,raw first-half (extra)
+t_ln60,False,True,trade prints,raw first-half (extra)
+t_lvol60,False,True,trade prints,raw first-half (extra)
+t_since,False,True,trade prints,raw first-half (extra)
+t_lrv,False,True,trade prints,raw first-half (extra)
+t_avgsize,False,True,trade prints,raw first-half (extra)
+t_vwap_vs_mid,False,True,trade prints,raw first-half (extra)
+t_vwap60_vs_mid,False,True,trade prints,raw first-half (extra)
+t_per_upd,False,True,trade prints,raw first-half (extra)
+mkt_x_lq_p50,False,True,spread path / depth,market (leave-one-out)
+x_lq_p50_vs_stock,False,True,spread path / depth,stock-relative (train-fold mean)
+mkt_x_n_spchg,False,True,spread path / depth,market (leave-one-out)
+x_n_spchg_vs_stock,False,True,spread path / depth,stock-relative (train-fold mean)
+mkt_t_ln,False,True,trade prints,market (leave-one-out)
+t_ln_vs_stock,False,True,trade prints,stock-relative (train-fold mean)
+mkt_t_lvol,False,True,trade prints,market (leave-one-out)
+t_lvol_vs_stock,False,True,trade prints,stock-relative (train-fold mean)
+mkt_t_lrv,False,True,trade prints,market (leave-one-out)
+t_lrv_vs_stock,False,True,trade prints,stock-relative (train-fold mean)
+mkt_x_frac_wide,False,True,spread path / depth,market (leave-one-out)
+x_frac_wide_vs_stock,False,True,spread path / depth,stock-relative (train-fold mean)
+mkt_t_since,False,True,trade prints,market (leave-one-out)
+t_since_vs_stock,False,True,trade prints,stock-relative (train-fold mean)
+stock_id,False,True,identity,categorical stock id

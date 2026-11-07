@@ -1,0 +1,4 @@
+subset,trades,net bps per trade
+own quote updated at decision second,17862,5.413164766347927
+own quote 1+ s old at decision second,3460,3.647948273232908
+both legs on fresh quotes,13659,6.010205189752116

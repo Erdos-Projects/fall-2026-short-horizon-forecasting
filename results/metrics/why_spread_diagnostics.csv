@@ -1,0 +1,8 @@
+quantity,value
+cost R2 using q_299,0.8059923342678099
+cost R2 ridge forecast,0.86206361819467
+cost RMSE ridge (bps),2.5545285865171707
+price-forecast RMSE (bps),24.007978027028425
+price R2 selected (47 inputs),0.06119428730728316
+price R2 market-only,0.05899975599027418
+market-only share of price R2,0.9641382976487777

@@ -1,0 +1,6 @@
+fold,price head,spread head,price ridge alpha,spread ridge alpha,price only: margin_bps,price + spread: margin_bps,price only: tau,price + spread: tau,price only: inner trades,price + spread: inner trades,minutes
+0,ridge a=1,HGB,ridge a=1,ridge a=10,2.0,2.0,inf,inf,16323,16323,3.6222530261166717
+1,ridge a=100,HGB,ridge a=100,ridge a=10,2.0,2.0,inf,inf,18055,18055,3.8464266019666713
+2,ridge a=100,HGB,ridge a=100,ridge a=10,2.0,2.0,inf,inf,17184,17184,3.7125621034000007
+3,ridge a=1,HGB,ridge a=1,ridge a=100,2.0,2.0,inf,inf,17806,17806,3.878104872700002
+4,ridge a=1,HGB,ridge a=1,ridge a=10,2.0,2.0,inf,inf,17156,17156,3.689132251266672

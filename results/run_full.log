@@ -1,0 +1,23 @@
+[features] running
+  built 20/112 stocks (1.0 min)
+  built 40/112 stocks (2.2 min)
+  built 60/112 stocks (3.4 min)
+  built 80/112 stocks (4.4 min)
+  built 100/112 stocks (5.5 min)
+  built 112/112 stocks (6.2 min)
+[checks] running
+[cv] running
+outer fold 1/5: heads {'price': 'ridge a=1', 'spread': 'HGB'} | rules {'price only': (2.0, inf), 'price + spread': (2.0, inf)} | 3.6 min
+outer fold 2/5: heads {'price': 'ridge a=100', 'spread': 'HGB'} | rules {'price only': (2.0, inf), 'price + spread': (2.0, inf)} | 3.8 min
+outer fold 3/5: heads {'price': 'ridge a=100', 'spread': 'HGB'} | rules {'price only': (2.0, inf), 'price + spread': (2.0, inf)} | 3.7 min
+outer fold 4/5: heads {'price': 'ridge a=1', 'spread': 'HGB'} | rules {'price only': (2.0, inf), 'price + spread': (2.0, inf)} | 3.9 min
+outer fold 5/5: heads {'price': 'ridge a=1', 'spread': 'HGB'} | rules {'price only': (2.0, inf), 'price + spread': (2.0, inf)} | 3.7 min
+[trading] running
+[sensitivity] running
+[why_spread] running
+[ablation] running
+[leakage] running
+[stress] running
+[upgraded] skipped: --skip-upgraded
+[benchmark] skipped: not requested (pass --score-benchmark to score the legacy benchmark once)
+done (full); failed stages: none; manifest: /content/drive/MyDrive/Optiver_Project/repo_run_full/run_manifest.json

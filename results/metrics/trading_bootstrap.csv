@@ -1,0 +1,4 @@
+comparison,mean_bps,ci_low,ci_high,resamples,cluster,cost_bps_per_side
+price + spread minus price only,0.0,0.0,0.0,2000,time_id,0.5
+price only minus cash,0.3185597011222477,0.21167251906424048,0.43666350617278854,2000,time_id,0.5
+price + spread minus cash,0.3185597011222477,0.21167251906424048,0.43666350617278854,2000,time_id,0.5

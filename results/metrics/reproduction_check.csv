@@ -1,0 +1,62 @@
+section,claim,archived,reproduced,tolerance,status,note
+5.1,"spread R2, selected (HGB), development",0.348,0.3484182231369622,0.0005,match,
+5.1,"spread R2, ridge",0.29,0.2909331226886589,0.005,match,
+5.1,"spread R2, persistence",-0.31,-0.3129657845389209,0.005,match,
+5.1,"price R2, selected (ridge)",0.061,0.0611942873072831,0.0005,match,
+5.1,"price R2, HGB",0.041,0.0405663278272804,0.0005,match,
+10,"spread R2, high-activity stocks",0.47,0.4657984340052944,0.005,match,
+10,"spread R2, min-spread-bound stocks",0.62,0.623742734366423,0.005,match,
+6,spread filter chosen (folds of 5),0.0,0.0,0.0,match,
+6,"trades, price-only rule",21322.0,21322.0,0.0,match,
+6,traded windows,1025.0,1025.0,0.0,match,
+6,net bps per trade,5.13,5.126716540750987,0.005,match,
+6,net bps per opportunity,0.32,0.3185597011222477,0.005,match,
+6,95% CI low,0.21,0.2116725190642404,0.005,match,
+6,95% CI high,0.44,0.4366635061727885,0.005,match,
+6,window-level t,2.8,2.7813448539989314,0.05,match,
+6.1,per opportunity at 1 bp/side,0.26,0.2564034867659446,0.005,match,
+6.1,"per trade, entry delay +2 s",4.9,4.90042099168376,0.05,match,range +4.2..+4.9
+6.1,"per trade, entry delay +10 s",4.2,4.1794049891243645,0.05,match,range +4.2..+4.9
+7,crossing-cost R2 from q_299,0.81,0.8059923342678099,0.005,match,
+7,"crossing-cost R2, ridge forecast",0.86,0.86206361819467,0.005,match,
+7,cost RMSE (bps),2.6,2.5545285865171707,0.05,match,
+7,price-forecast RMSE (bps),24.0,24.007978027028425,0.5,match,'about 24'
+7,oracle minus price only (bps/opp),-0.005,-0.0050280744420966,0.0005,match,
+7,oracle CI low,-0.022,-0.0215481513575995,0.0005,match,
+7,oracle CI high,0.011,0.0108642143839474,0.0005,match,
+7,market-only price R2,0.059,0.0589997559902741,0.0005,match,
+7,market-only share of price R2,0.96,0.9641382976487776,0.005,match,
+7,"market-only rule, bps/opp",0.297,0.2966043684336757,0.0005,match,
+7,bottom decile forecast,-10.8,-10.80635812820877,0.05,match,
+7,bottom decile realised,-9.7,-9.742410293574377,0.05,match,
+7,top decile forecast,11.2,11.181472686172636,0.05,match,
+7,top decile realised,11.0,11.04492310694353,0.05,match,
+7,top decile net if bought,0.6,0.6347276986732773,0.05,match,
+8.1,spread R2 loss without spread family,0.09,0.086130330443274,0.005,match,'about 0.09'
+8.1,price R2 loss without price family,0.06,0.0640327374804982,0.005,match,'about 0.06'
+8.1,"price R2, own-stock inputs only",0.0,0.0011061268172852,0.005,match,
+8.1,"price R2, market inputs only",0.03,0.0328372331982786,0.005,match,
+8.1,"spread R2, market inputs only",0.13,0.1316481786880817,0.005,match,
+8.2,mid move by second 300 (bps),0.1,0.085233127187989,0.05,match,
+8.2,mid move by second 310,0.9,0.8543806650953115,0.05,match,
+8.2,mid move by second 360,4.1,4.096705266447026,0.05,match,
+8.2,mid move by second 599,10.7,10.683580757754832,0.05,match,
+8.2,"per trade, own quote fresh at 299",5.4,5.413164766347927,0.05,match,
+8.2,"per trade, own quote stale at 299",3.7,3.647948273232908,0.05,differs,
+8.2,"per trade, both legs fresh",6.0,6.010205189752116,0.05,match,
+8.2,"lagged market inputs, bps/opp",0.23,0.2312366728729848,0.005,match,
+8.2,"shuffled market inputs, price R2",-0.003,-0.0025079112692314,0.0005,match,
+8.2,share of P&L in best 1% of windows,0.76,0.7632494566397213,0.005,match,
+8.2,rule after dropping own best 5%,-0.12,-0.1205550130162425,0.005,match,
+8.2,always-long after dropping own best 5%,-1.24,-1.2378550581312049,0.005,match,
+8.2,rule after dropping largest market moves,0.06,0.0599543349950492,0.005,match,
+8.2,gross bps per trade,6.1,6.127022891896575,0.05,match,
+8.2,break-even fee (bp/side),3.0,3.0635114459482873,0.1,match,'about 3'
+8.3,"price R2, grouped split",0.039,0.0405663278272804,0.0005,differs,stock means now in-fold
+8.3,"price R2, random-row split",0.179,0.1786393119244211,0.0005,match,stock means now in-fold
+8.3,random/grouped price R2 ratio,4.6,4.403635268270158,0.05,differs,stock means now in-fold
+8.4,correctness checks passing,8.0,8.0,0.0,match,repo runs 11 checks; counted as 8 if all pass
+5.2,upgraded spread R2,0.38,0.3803869094537176,0.0005,match,
+5.2,upgraded price R2,0.07,0.0699688486011822,0.0005,match,
+5.3,"unseen stocks, mean spread R2",0.28,0.2807260982432799,0.005,match,
+5.3,"seen stocks, mean spread R2",0.32,0.32450481623746025,0.005,match,
