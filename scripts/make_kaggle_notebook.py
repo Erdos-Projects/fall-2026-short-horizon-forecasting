@@ -13,23 +13,20 @@ ROOT = Path(__file__).resolve().parents[1]
 module_src = (ROOT / "src/obforecast/volatility.py").read_text()
 
 cells = [
-    nbf.v4.new_markdown_cell("""# Optiver realized volatility: late submission
+    nbf.v4.new_markdown_cell("""# Optiver realized volatility (late submission)
 
-Self-contained version of notebook 05's best model (Erdős Institute, Fall 2026 project). Features from the
-whole ten-minute window predict the next ten minutes' realized volatility. XGBoost is trained to RMSPE through
-weights of 1/y².
+This is the best model from our notebook 05 (Erdős Institute project, Fall 2026), put into one notebook so it runs on Kaggle. It uses features from the whole ten-minute window to predict RV for the next ten minutes, with XGBoost weighted by 1/y² so it trains on RMSPE.
 
-Set `USE_NEIGHBOURS` below:
+`USE_NEIGHBOURS` switches the neighbour features on or off:
 
-* `False`: book, trade, stock and market features only (cross-validation RMSPE 0.222 in notebook 05).
-* `True`: also averages features over the most similar windows, the 1st-place idea (CV 0.206). Neighbours
-  are found among training and test windows together, as the winning solutions did.
+* `False`: only book, trade, stock and market features. CV 0.222, private LB 0.2455.
+* `True`: also averages features over the most similar windows (the trick the top solutions used), including the 1–3 closest windows by recovered price. CV 0.203. Neighbours are searched over train and test windows together, like the top solutions did.
 
-Submit once with each setting to see what the neighbour features are worth on the private leaderboard."""),
+An earlier version of the neighbour features (CV 0.206) got 0.2186 private."""),
     nbf.v4.new_code_cell("""USE_NEIGHBOURS = True
 N_ESTIMATORS = 700          # same settings as notebook 05
 N_JOBS = 4                  # Kaggle notebooks have 4 CPUs"""),
-    nbf.v4.new_markdown_cell("Feature code, copied from `src/obforecast/volatility.py`."),
+    nbf.v4.new_markdown_cell("Feature code (copied from `src/obforecast/volatility.py` in our repo)."),
     nbf.v4.new_code_cell(module_src),
     nbf.v4.new_code_cell(r'''import os, warnings
 from pathlib import Path
@@ -95,10 +92,11 @@ cols = [c for c in base if c != "price_level"]
 cols += add_market_features(df, ["rv1_0", "rv1_300", "rv1_450", "rv2_0", "trv_0", "n_trade_0",
                                  "spread_mean", "depth_mean", "n_book_0", "size_0"])
 if USE_NEIGHBOURS:
-    nn_src = ["rv1_0", "rv1_450", "trv_0"]
-    cols += neighbour_features(df, "rv1_0", nn_src, [5, 20, 50], "vol", metric="corr")
+    # k = 1-3 by recovered price picks out the windows just before and after each window
+    nn_src = ["rv1_0", "rv1_150", "rv1_300", "rv1_450", "rv2_0", "trv_0", "n_trade_0", "spread_mean", "depth_mean"]
+    cols += neighbour_features(df, "rv1_0", nn_src, [3, 10, 50], "vol", metric="corr")
     df["log_price_level"] = np.log(df.price_level)
-    cols += neighbour_features(df, "log_price_level", nn_src, [5, 20, 50], "px", metric="minmax")
+    cols += neighbour_features(df, "log_price_level", nn_src, [1, 2, 3, 5, 10, 20, 50], "px", metric="minmax")
 
 # stock averages from training windows only
 cols += add_stock_features(df, ["rv1_0", "trv_0", "n_trade_0"], ~is_test)

@@ -224,15 +224,8 @@ def add_stock_features(df: pd.DataFrame, cols: list[str], train_mask: np.ndarray
     return list(s.columns)
 
 
-def neighbour_features(df: pd.DataFrame, pivot_col: str, value_cols: list[str],
-                       ks: list[int], name: str, metric: str = "corr") -> list[str]:
-    """Average of ``value_cols`` over each window's k most similar other windows.
-
-    Similarity is between windows' cross-sectional vectors of ``pivot_col`` (one value per
-    stock). Uses features only, never targets, but neighbours may be later in calendar time.
-    """
-    from sklearn.neighbors import NearestNeighbors
-
+def _window_matrix(df: pd.DataFrame, pivot_col: str, metric: str):
+    """One row per window: its cross-sectional vector of ``pivot_col``, scaled for distances."""
     piv = df.pivot(index="time_id", columns="stock_id", values=pivot_col)
     piv = piv.fillna(piv.mean())
     X = piv.to_numpy()
@@ -240,10 +233,23 @@ def neighbour_features(df: pd.DataFrame, pivot_col: str, value_cols: list[str],
         X = (X - X.mean(0)) / (X.std(0) + 1e-12)
     else:                       # min-max per stock, as in the 1st-place price-level neighbours
         X = (X - X.min(0)) / (X.max(0) - X.min(0) + 1e-12)
+    return piv.index.to_numpy(), X
+
+
+def neighbour_features(df: pd.DataFrame, pivot_col: str, value_cols: list[str],
+                       ks: list[int], name: str, metric: str = "corr") -> list[str]:
+    """Average of ``value_cols`` over each window's k most similar other windows.
+
+    Similarity is between windows' cross-sectional vectors of ``pivot_col`` (one value per
+    stock). Uses features only, never targets, but neighbours may be later in calendar time.
+    Small k (1-3) with price-level neighbours picks out the windows just before and after.
+    """
+    from sklearn.neighbors import NearestNeighbors
+
+    tids, X = _window_matrix(df, pivot_col, metric)
     nn = NearestNeighbors(n_neighbors=max(ks) + 1).fit(X)
     _, ind = nn.kneighbors(X)
     ind = ind[:, 1:]                                  # drop the window itself
-    tids = piv.index.to_numpy()
     new = []
     pos = pd.Series(np.arange(len(tids)), index=tids)
     row_t = pos.loc[df.time_id].to_numpy()
