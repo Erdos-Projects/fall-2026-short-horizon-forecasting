@@ -1,0 +1,8 @@
+model,RMSPE,R2 (log RV),uses other windows
+naive: RV of the observed window,0.34135449018801606,0.7989543542245096,False
+book features (own stock),0.24071995143927774,0.8344497935261002,False
++ trade features,0.23680554347383995,0.8426104058760875,False
++ stock averages,0.23232920635135737,0.8507143905906691,False
++ market features,0.2215784968529859,0.8739835909414235,False
++ neighbours by volatility pattern,0.2171286569802707,0.8795360261182593,True
++ neighbours by recovered price,0.20584957043755814,0.8900772523261602,True

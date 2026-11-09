@@ -1,0 +1,9 @@
+target,inputs,R2,uses other windows
+change in average spread,notebook 04 baseline inputs,0.34841822313696225,False
+change in average spread,+ volatility features (own stock),0.3514406179640547,False
+change in average spread,+ market volatility features,0.3530377505040512,False
+change in average spread,+ neighbour features,0.36606414624807415,True
+5-minute return,notebook 04 baseline inputs,0.04056632782728009,False
+5-minute return,+ volatility features (own stock),0.03996382992081393,False
+5-minute return,+ market volatility features,0.047633967592630944,False
+5-minute return,+ neighbour features,0.04963558310973892,True

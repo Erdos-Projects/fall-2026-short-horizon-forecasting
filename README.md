@@ -15,6 +15,7 @@ The main results are in [04_forecasting_and_trading.ipynb](notebooks/04_forecast
 | [02 Spread models](notebooks/02_spread_models.ipynb) | How the spread model was built up |
 | [03 Spread-widening events](notebooks/03_spread_widening_events.ipynb) | Classifying unusually large spread increases |
 | [04 Forecasting and trading](notebooks/04_forecasting_and_trading.ipynb) | Final models and the trading simulation |
+| [05 Volatility forecasting](notebooks/05_volatility_forecasting.ipynb) | The original Kaggle task, the same idea over five minutes, and what volatility adds to the spread and return forecasts |
 
 [RESEARCH_GUIDE.md](notebooks/RESEARCH_GUIDE.md) explains how the notebooks fit together and how to rerun them. The original working notebooks, with the full history and figures, are in [archive/](archive/README.md).
 
@@ -43,9 +44,11 @@ We used the [Optiver Realized Volatility Prediction](https://www.kaggle.com/comp
 
 | Folder | What's in it |
 |---|---|
-| [`notebooks/`](notebooks/) | The five project notebooks (00–04) and the [notebook guide](notebooks/RESEARCH_GUIDE.md) |
+| [`notebooks/`](notebooks/) | The six project notebooks (00–05) and the [notebook guide](notebooks/RESEARCH_GUIDE.md) |
 | [`results/`](results/README.md) | Saved outputs of the full-data run: figures, metric tables, which windows were used for development and held out, and run logs |
 | [`src/obforecast/`](src/obforecast/) | The Python code the notebooks use: rebuilding the order book, features, models, validation and the trading simulation |
+| [`scripts/`](scripts/) | `build_vol_features.py` builds the cached volatility features for notebook 05; `make_kaggle_notebook.py` writes the Kaggle submission notebook |
+| [`kaggle/`](kaggle/) | A self-contained notebook for a late submission to the competition, using notebook 05's model. With the neighbour features it scored 0.2186 on the private leaderboard |
 | [`configs/`](configs/) | Run settings: `default.yaml` for the full analysis, `smoke.yaml` for a quick three-stock test |
 | [`archive/`](archive/README.md) | The original Colab notebooks, kept unchanged with their saved outputs and figures |
 
