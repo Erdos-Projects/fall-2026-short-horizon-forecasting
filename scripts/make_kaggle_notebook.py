@@ -17,7 +17,7 @@ cells = [
 
 This is the best model from our notebook 05 (Erdős Institute project, Fall 2026), put into one notebook so it runs on Kaggle. It uses features from the whole ten-minute window to predict RV for the next ten minutes.
 
-The model is 80% neural net (averaged over 3 seeds) + 20% LightGBM, both trained on RMSPE. CV 0.1954.
+The model is 80% neural net (averaged over 3 seeds) + 20% LightGBM, both trained on RMSPE. CV 0.1954, private LB 0.1977.
 
 `USE_NEIGHBOURS` switches the neighbour features on or off (the trick the top solutions used, averaging features over the most similar windows, including the 1–3 closest by recovered price). Neighbours are searched over train and test windows together.
 
