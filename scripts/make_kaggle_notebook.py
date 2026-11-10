@@ -15,17 +15,18 @@ module_src = (ROOT / "src/obforecast/volatility.py").read_text()
 cells = [
     nbf.v4.new_markdown_cell("""# Optiver realized volatility (late submission)
 
-This is the best model from our notebook 05 (Erdős Institute project, Fall 2026), put into one notebook so it runs on Kaggle. It uses features from the whole ten-minute window to predict RV for the next ten minutes, with XGBoost weighted by 1/y² so it trains on RMSPE.
+This is the best model from our notebook 05 (Erdős Institute project, Fall 2026), put into one notebook so it runs on Kaggle. It uses features from the whole ten-minute window to predict RV for the next ten minutes.
 
-`USE_NEIGHBOURS` switches the neighbour features on or off:
+The model is 80% neural net (averaged over 3 seeds) + 20% LightGBM, both trained on RMSPE. CV 0.1954.
 
-* `False`: only book, trade, stock and market features. CV 0.222, private LB 0.2455.
-* `True`: also averages features over the most similar windows (the trick the top solutions used), including the 1–3 closest windows by recovered price. CV 0.203, private LB 0.2141. Neighbours are searched over train and test windows together, like the top solutions did.
+`USE_NEIGHBOURS` switches the neighbour features on or off (the trick the top solutions used, averaging features over the most similar windows, including the 1–3 closest by recovered price). Neighbours are searched over train and test windows together.
 
-An earlier version of the neighbour features (CV 0.206) got 0.2186 private."""),
+Earlier submissions (single XGBoost): 0.2455 private without neighbours, 0.2186 with the first neighbour version, 0.2141 with the closest 1–3 windows added."""),
     nbf.v4.new_code_cell("""USE_NEIGHBOURS = True
-N_ESTIMATORS = 700          # same settings as notebook 05
-N_JOBS = 4                  # Kaggle notebooks have 4 CPUs"""),
+W_NN = 0.8                  # weight on the neural net, rest goes to LightGBM
+N_SEEDS = 3                 # neural nets averaged over this many random seeds
+NN_EPOCHS = 30
+N_JOBS = 4                  # Kaggle notebooks have 4 CPUs (GPU is used if switched on)"""),
     nbf.v4.new_markdown_cell("Feature code (copied from `src/obforecast/volatility.py` in our repo)."),
     nbf.v4.new_code_cell(module_src),
     nbf.v4.new_code_cell(r'''import os, warnings
@@ -33,7 +34,6 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-import xgboost as xgb
 from joblib import Parallel, delayed
 
 warnings.filterwarnings("ignore", category=RuntimeWarning)
@@ -104,15 +104,74 @@ y = df.target.to_numpy()
 df["stk_log_target"] = df.stock_id.map(pd.Series(np.log(y[~is_test])).groupby(df.stock_id[~is_test].to_numpy()).mean())
 cols.append("stk_log_target")
 print(f"{len(cols)} model inputs")'''),
-    nbf.v4.new_code_cell(r'''params = dict(n_estimators=N_ESTIMATORS, learning_rate=0.05, max_depth=7, subsample=0.8, colsample_bytree=0.6,
-              min_child_weight=50, tree_method="hist", n_jobs=N_JOBS, random_state=0)
-w = 1 / y[~is_test] ** 2
-model = xgb.XGBRegressor(**params).fit(df.loc[~is_test, cols], y[~is_test], sample_weight=w / w.mean())
+    nbf.v4.new_markdown_cell("Two models: LightGBM and a small neural net, both trained on RMSPE. The final forecast is 80% neural net + 20% LightGBM (weights picked on our CV: 0.1954 vs 0.1958 for the neural net alone)."),
+    nbf.v4.new_code_cell(r'''import lightgbm as lgb
+import torch
+from torch import nn
+from sklearn.preprocessing import QuantileTransformer
 
-pred = model.predict(df.loc[is_test, cols])
+Xtr, Xte, ytr = df.loc[~is_test, cols], df.loc[is_test, cols], y[~is_test]
+w = 1 / ytr ** 2
+w = w / w.mean()
+
+# LightGBM
+lgbm = lgb.LGBMRegressor(n_estimators=1200, learning_rate=0.03, num_leaves=127, min_child_samples=300,
+                         subsample=0.8, subsample_freq=1, colsample_bytree=0.5, reg_lambda=1.0,
+                         n_jobs=N_JOBS, random_state=0, verbose=-1)
+pred_lgb = lgbm.fit(Xtr, ytr, sample_weight=w).predict(Xte)
+print("lightgbm done")'''),
+    nbf.v4.new_code_cell(r'''# Neural net: quantile-scaled inputs + a learned vector per stock, loss = RMSPE
+dev = "cuda" if torch.cuda.is_available() else "cpu"
+torch.set_num_threads(N_JOBS)
+A_np, B_np = Xtr.to_numpy(np.float32), Xte.to_numpy(np.float32)
+med = np.nan_to_num(np.nanmedian(A_np, axis=0))
+fill = lambda X: np.where(np.isfinite(X), X, med)
+qt = QuantileTransformer(n_quantiles=2000, output_distribution="normal", subsample=200_000, random_state=0)
+A = torch.tensor(qt.fit_transform(fill(A_np)), dtype=torch.float32)
+B = torch.tensor(qt.transform(fill(B_np)), dtype=torch.float32)
+yt = torch.tensor(ytr, dtype=torch.float32)
+st = torch.tensor(df.stock_id.to_numpy()[~is_test], dtype=torch.long)
+sv = torch.tensor(df.stock_id.to_numpy()[is_test], dtype=torch.long)
+scale = float(np.exp(np.mean(np.log(ytr))))
+
+
+class Net(nn.Module):
+    def __init__(self, d):
+        super().__init__()
+        self.emb = nn.Embedding(128, 16)
+        self.body = nn.Sequential(nn.Linear(d + 16, 384), nn.SiLU(), nn.Dropout(0.1),
+                                  nn.Linear(384, 192), nn.SiLU(), nn.Dropout(0.1),
+                                  nn.Linear(192, 96), nn.SiLU(), nn.Linear(96, 1))
+
+    def forward(self, x, s):
+        return scale * torch.exp(self.body(torch.cat([x, self.emb(s)], 1)).squeeze(1))
+
+
+def train_nn(seed, epochs=NN_EPOCHS, bs=2048):
+    torch.manual_seed(seed)
+    net = Net(A.shape[1]).to(dev)
+    opt = torch.optim.AdamW(net.parameters(), lr=2e-3, weight_decay=1e-5)
+    sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=2e-3, total_steps=epochs * (len(A) // bs + 1))
+    for ep in range(epochs):
+        net.train()
+        perm = torch.randperm(len(A))
+        for i in range(0, len(A), bs):
+            idx = perm[i:i + bs]
+            p, yy = net(A[idx].to(dev), st[idx].to(dev)), yt[idx].to(dev)
+            loss = torch.sqrt(torch.mean(((yy - p) / yy) ** 2))
+            opt.zero_grad(); loss.backward(); opt.step(); sched.step()
+    net.eval()
+    with torch.no_grad():
+        return np.concatenate([net(B[i:i + 16384].to(dev), sv[i:i + 16384].to(dev)).cpu().numpy()
+                               for i in range(0, len(B), 16384)])
+
+
+pred_nn = np.mean([train_nn(seed) for seed in range(N_SEEDS)], axis=0)
+print("neural net done")'''),
+    nbf.v4.new_code_cell(r'''pred = W_NN * pred_nn + (1 - W_NN) * pred_lgb
 fallback = np.exp(df.loc[is_test, "rv1_0"].to_numpy()) - 1e-8     # last-window RV if a prediction is unusable
 pred = np.where(np.isfinite(pred) & (pred > 0), pred, fallback)
-pred = np.where(np.isfinite(pred) & (pred > 0), pred, np.nanmedian(y[~is_test]))
+pred = np.where(np.isfinite(pred) & (pred > 0), pred, np.nanmedian(ytr))
 sub = pd.DataFrame({"row_id": test_ids.stock_id.astype(str) + "-" + test_ids.time_id.astype(str), "target": pred})
 sub.to_csv("submission.csv", index=False)
 sub.head()'''),
