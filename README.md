@@ -48,7 +48,7 @@ We used the [Optiver Realized Volatility Prediction](https://www.kaggle.com/comp
 | [`results/`](results/README.md) | Saved outputs of the full-data run: figures, metric tables, which windows were used for development and held out, and run logs |
 | [`src/obforecast/`](src/obforecast/) | The Python code the notebooks use: rebuilding the order book, features, models, validation and the trading simulation |
 | [`scripts/`](scripts/) | `build_vol_features.py` builds the cached volatility features for notebook 05; `make_kaggle_notebook.py` writes the Kaggle submission notebook |
-| [`kaggle/`](kaggle/) | A self-contained notebook for a late submission to the competition, using notebook 05's model. Private leaderboard RMSPE: 0.2186 with the neighbour features, 0.2455 without |
+| [`kaggle/`](kaggle/) | A self-contained notebook for a late submission to the competition, using notebook 05's model. Private leaderboard RMSPE: 0.2141 with the neighbour features (0.2186 with an earlier version), 0.2455 without |
 | [`configs/`](configs/) | Run settings: `default.yaml` for the full analysis, `smoke.yaml` for a quick three-stock test |
 | [`archive/`](archive/README.md) | The original Colab notebooks, kept unchanged with their saved outputs and figures |
 

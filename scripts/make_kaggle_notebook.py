@@ -20,7 +20,7 @@ This is the best model from our notebook 05 (Erdős Institute project, Fall 2026
 `USE_NEIGHBOURS` switches the neighbour features on or off:
 
 * `False`: only book, trade, stock and market features. CV 0.222, private LB 0.2455.
-* `True`: also averages features over the most similar windows (the trick the top solutions used), including the 1–3 closest windows by recovered price. CV 0.203. Neighbours are searched over train and test windows together, like the top solutions did.
+* `True`: also averages features over the most similar windows (the trick the top solutions used), including the 1–3 closest windows by recovered price. CV 0.203, private LB 0.2141. Neighbours are searched over train and test windows together, like the top solutions did.
 
 An earlier version of the neighbour features (CV 0.206) got 0.2186 private."""),
     nbf.v4.new_code_cell("""USE_NEIGHBOURS = True
